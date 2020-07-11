@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-// import Logo from '../../images/hadouken.jpg'
-
 
 class Login extends Component {
 
   render() {
     return (
-      <div className="container" id="hadouken_contain">
+      <div className="container">
         <h1>Welcome to Hadouken!</h1>
         <div className="row">
           <div className="col-md-3"></div>
@@ -49,7 +47,7 @@ class Login extends Component {
                       <a className="btn btn-primary"
                       href="/games"
                       type="submit">
-                        Log in?
+                        Log in
                       </a>
                     </div>
                     <div className="col-3">
@@ -58,7 +56,7 @@ class Login extends Component {
                        className="btn btn-primary"
                        id="signup"
                        href="/signup">
-                         Sign Up?
+                         Sign Up
                       </a>
                     </div>
                     <div className="col-3">

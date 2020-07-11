@@ -1,9 +1,13 @@
-.row .col{
+.row .col {
   text-align: center;
   margin: auto;
   float: none;
 }
 
+.container {
+  text-align: center;
+}
+
 select {
-  display:block;
+  display: block;
 }
