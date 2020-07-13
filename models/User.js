@@ -31,10 +31,10 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.DATE,
         allowNull: true,       
     },
-    // picURL:{
-    //     type: DataTypes.STRING,
-    //     allowNull: true
-    // },
+    picURL:{
+        type: DataTypes.STRING,
+        allowNull: true
+    },
   });
   User.associate = (models) => {
     User.hasMany(models.Combo);

@@ -1,7 +1,6 @@
 require("dotenv").config();
 const path = require("path")
 const express = require("express");
-const path = require("path");
 const db = require("./models");
 const PORT = process.env.PORT || 3001;
 const UserController = require("./controllers/userController");
