@@ -7,6 +7,7 @@ class NotFound extends Component {
               <div className="row">
                   <div className="col">
                   how'd you get here
+                  Shut it Miss O'Neal
                   </div>
               </div>
             </div>
