@@ -4,8 +4,6 @@ const express = require("express");
 
 const db = require("./models");
 const PORT = process.env.PORT || 3001;
-// const UserController = require("./controllers/userController");
-// const GameController = require("./controllers/gameController");
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
