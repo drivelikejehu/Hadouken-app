@@ -47,7 +47,7 @@ class Login extends Component {
                         href="/games"
                         type="submit"
                       >
-                        Log in?
+                        Log in
                       </a>
                     </div>
                     <div className="col-3">
@@ -57,7 +57,7 @@ class Login extends Component {
                         id="signup"
                         href="/signup"
                       >
-                        Sign Up?
+                        Sign Up
                       </a>
                     </div>
                     <div className="col-3"></div>
