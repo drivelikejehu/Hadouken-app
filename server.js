@@ -1,4 +1,5 @@
 require("dotenv").config();
+const path = require("path")
 const express = require("express");
 const path = require("path");
 const db = require("./models");
@@ -13,7 +14,6 @@ app.use(express.json());
 app.get("/api/config", (req, res) => {
   res.json({
     success: true,
-    currentPort: PORT,
   });
 });
 
