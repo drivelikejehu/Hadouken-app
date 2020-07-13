@@ -1,11 +1,11 @@
 require("dotenv").config();
 const path = require("path")
 const express = require("express");
-const path = require("path");
+
 const db = require("./models");
 const PORT = process.env.PORT || 3001;
-const UserController = require("./controllers/userController");
-const GameController = require("./controllers/gameController");
+// const UserController = require("./controllers/userController");
+// const GameController = require("./controllers/gameController");
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
