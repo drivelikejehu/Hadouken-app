@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const ComboList = (props) => {
   return (
@@ -21,7 +21,7 @@ const ComboList = (props) => {
                 className="dropdown-menu"
                 aria-labelledby="dropdownMenuButton"
               >
-                <a className="dropdown-item" href="#">
+                {/* <a className="dropdown-item" href="#">
                   {props.combo1}
                 </a>
                 <a className="dropdown-item" href="#">
@@ -29,7 +29,7 @@ const ComboList = (props) => {
                 </a>
                 <a className="dropdown-item" href="#">
                   {props.combo3}
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

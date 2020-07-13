@@ -1,10 +1,11 @@
 import React from "react";
 import "./Card.css";
-import { Link, useLocation } from "react-router-dom";
+// import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Card = (props) => {
 
-  const location = useLocation()
+  // const location = useLocation()
 
   return (
     <div className="card justify-content-center">
