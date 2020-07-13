@@ -48,7 +48,7 @@ class Games extends Component {
           <div className="col-3">
             <Card
               src="https://www.fightersgeneration.com/games/sf2-fly.jpg"
-              charName="SF2"
+              charname="SF2"
               desc="The World Warriors"
               url="../SF2"
             />
@@ -57,7 +57,7 @@ class Games extends Component {
           <div className="col-3">
             <Card
               src="https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Official_Tekken_7_Logo.jpg/220px-Official_Tekken_7_Logo.jpg"
-              charName="Tekken 7"
+              charname="Tekken 7"
               desc="3D Mishima"
               url="../Tekken7"
             />
@@ -67,7 +67,7 @@ class Games extends Component {
           <div className="col-3">
             <Card
               src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/DBFZ_cover_art.jpg/220px-DBFZ_cover_art.jpg"
-              charName="DBFZ"
+              charname="DBFZ"
               desc="Cell's Revenge"
               url="../DBFZ"
             />
@@ -76,7 +76,7 @@ class Games extends Component {
           <div className="col-3">
             <Card
               src="https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Super_Smash_Bros._Ultimate.jpg/220px-Super_Smash_Bros._Ultimate.jpg"
-              charName="SSBU"
+              charname="SSBU"
               desc="Now with more Min Min!"
               url="../SSBU"
             />
