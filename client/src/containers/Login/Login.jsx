@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 class Login extends Component {
-
   render() {
     return (
       <div className="container">
@@ -40,27 +39,28 @@ class Login extends Component {
                     </label>
                   </div>
                   <div className="row justify-content-center">
-                      <div className="col-3">
-                      </div>
+                    <div className="col-3"></div>
                     <div className="col-3">
                       {/* this is temporary measure until we build the actual on submit crap */}
-                      <a className="btn btn-primary"
-                      href="/games"
-                      type="submit">
-                        Log in
+                      <a
+                        className="btn btn-primary"
+                        href="/games"
+                        type="submit"
+                      >
+                        Log in?
                       </a>
                     </div>
                     <div className="col-3">
                       <a
-                      type="button"
-                       className="btn btn-primary"
-                       id="signup"
-                       href="/signup">
-                         Sign Up
+                        type="button"
+                        className="btn btn-primary"
+                        id="signup"
+                        href="/signup"
+                      >
+                        Sign Up?
                       </a>
                     </div>
-                    <div className="col-3">
-                    </div>
+                    <div className="col-3"></div>
                   </div>
                 </form>
               </div>

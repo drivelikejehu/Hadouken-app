@@ -4,9 +4,9 @@ import "./NavBar.css";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark navbar-header">
       <div className="container">
-        <a class="navbar-brand" href="/">
+        <a className="navbar-brand" href="/">
           Hadouken
         </a>
         <button
@@ -24,17 +24,17 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link className="nav-link" to={`/Games`}>
+              <Link className="nav-link" to={`/games`}>
                 Games
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={`/Account`}>
+              <Link className="nav-link" to={`/account`}>
                 Account
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={`/Combos`}>
+              <Link className="nav-link" to={`/combos`}>
                 Combos
               </Link>
             </li>
