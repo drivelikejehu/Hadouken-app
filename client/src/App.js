@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Shared/Navbar/Navbar";
 import Footer from "./components/Shared/Footer/Footer";
 import Login from "./containers/Login/Login";
+import Signup from "./containers/Signup/Signup"
 import Games from "./containers/Games/Games";
 import Combos from "./containers/Combos/Combos";
 import Account from "./containers/Account/Account";
@@ -19,6 +20,9 @@ function App() {
             <Switch>
               <Route exact path={["/", "/login"]}>
                 <Login />
+              </Route>
+              <Route exact path={["/signup"]}>
+                <Signup />
               </Route>
               <Route exact path={["/games"]}>
                 <Games />
