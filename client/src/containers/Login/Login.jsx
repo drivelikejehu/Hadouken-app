@@ -8,11 +8,11 @@ class Login extends Component {
         <div className="row">
           <div className="col-md-3"></div>
           <div className="col-md-6">
-            <div className="card">
+          <div className="card">
               <div className="card-body">
                 <form>
                   <div className="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
+                    <label htmlFor="exampleInputEmail1">Email address</label>
                     <input
                       type="email"
                       className="form-control"
@@ -21,7 +21,7 @@ class Login extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label for="exampleInputPassword1">Password</label>
+                    <label htmlFor="exampleInputPassword1">Password</label>
                     <input
                       type="password"
                       className="form-control"
@@ -34,7 +34,7 @@ class Login extends Component {
                       className="form-check-input"
                       id="exampleCheck1"
                     />
-                    <label className="form-check-label" for="exampleCheck1">
+                    <label className="form-check-label" htmlFor="exampleCheck1">
                       I'm not a robot.
                     </label>
                   </div>
