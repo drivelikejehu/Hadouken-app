@@ -12,6 +12,7 @@ app.use(express.json());
 app.get("/api/config", (req, res) => {
   res.json({
     success: true,
+    currentPort: PORT,
   });
 });
 
@@ -21,8 +22,8 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "/client/build/index.html"));
 });
 
-db.sequelize.sync().then(function () {
+db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
-    console.log(`App is running on http://localhost:${PORT}`);
+    console.log(`Express App is running on http://localhost:${PORT}`);
   });
 });

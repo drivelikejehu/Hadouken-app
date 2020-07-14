@@ -1,6 +1,6 @@
 import React from "react";
 
-const ComboList = (props) => {
+const Combos = (props) => {
   return (
     <>
       <div className="container">
@@ -21,15 +21,15 @@ const ComboList = (props) => {
                 className="dropdown-menu"
                 aria-labelledby="dropdownMenuButton"
               >
-                {/* <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="/">
                   {props.combo1}
                 </a>
-                <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="/">
                   {props.combo2}
                 </a>
-                <a className="dropdown-item" href="#">
+                <a className="dropdown-item" href="/">
                   {props.combo3}
-                </a> */}
+                </a>
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@ const ComboList = (props) => {
           <div className="col-7">
             <form>
               <div className="form-group">
-                <label for="ComboNamer">Combo Name</label>
+                <label htmlFor="ComboNamer">Combo Name</label>
                 <input
                   type="email"
                   className="form-control"
@@ -77,8 +77,8 @@ const ComboList = (props) => {
                   placeholder="Enter your combo's name"
                 />
               </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Combo Inputs</label>
+              <div className="form-group">
+                <label htmlFor="exampleInputPassword1">Combo Inputs</label>
                 <input
                   type="text"
                   className="form-control"
@@ -86,13 +86,13 @@ const ComboList = (props) => {
                   placeholder="Input your combo's commands here"
                 />
               </div>
-              <div class="form-check">
+              <div className="form-check">
                 <input
                   type="checkbox"
                   className="form-check-input"
                   id="ComboChecker"
                 />
-                <label className="form-check-label" for="ComboCheck1">
+                <label className="form-check-label" htmlFor="ComboCheck1">
                   Are you sure?
                 </label>
               </div>
@@ -107,4 +107,4 @@ const ComboList = (props) => {
   );
 };
 
-export default ComboList;
+export default Combos;
