@@ -21,9 +21,10 @@ class Games extends Component {
 
   render() {
     return (
-      <div className="container text-center">
+      <div className="container">
         <form onSubmit={this.handleFormSubmit}>
           <div className="row">
+            <div className="col-sm-2"></div>
             <div className="col">
               <div className="form-group">
                 <input

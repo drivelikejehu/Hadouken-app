@@ -47,6 +47,7 @@ class Account extends Component {
       <>
         <div className="container">
           <div className="row">
+            <div className="col-sm-2"></div>
             <div className="col-sm-4">
               <img src={this.state.avatarUrl} alt="Placeholder" />
             </div>
@@ -95,7 +96,7 @@ class Account extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-sm-4"></div>
+            <div className="col-sm-2"></div>
           </div>
         </div>
       </>
