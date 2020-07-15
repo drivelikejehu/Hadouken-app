@@ -8,7 +8,14 @@ router.get("/", (req, res) => {
     }).then((user) => res.json(user));
   });
 
-  router.get("/", (req, res) => {
+  router.get("/characters/:id", (req, res) => {
     db.Character.findOne({
+      where: req.params.id
     }).then((user) => res.json(user));
   });
+
+// router.put(":/id", (req, res) => {
+    
+// })
+
+module.exports = router;

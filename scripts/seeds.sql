@@ -1,29 +1,29 @@
--- INSERT into Games (id, name, genre, createdAt, updatedAt)
--- VALUES (
---     "1",
---     "Street Fighter 2",
---     "2D Fighter",
---     '9999-12-31 23:59:59',
---     '9999-12-31 23:59:59'
--- ),
--- ("2",
---     "Tekken 7",
---     "3D Fighter",
---     '9999-12-31 23:59:59',
---     '9999-12-31 23:59:59'
--- ),
--- ("3",
---     "Dragon Ball Fighter Z",
---     "2D Fighter",
---     '9999-12-31 23:59:59',
---     '9999-12-31 23:59:59'
--- ),
--- ("4",
---     "Super Smash Bros. Ultimate",
---     "Platform Fighter",
---     '9999-12-31 23:59:59',
---     '9999-12-31 23:59:59'
--- );
+INSERT into Games (id, name, genre, createdAt, updatedAt)
+VALUES (
+    "1",
+    "Street Fighter 2",
+    "2D Fighter",
+    '9999-12-31 23:59:59',
+    '9999-12-31 23:59:59'
+),
+("2",
+    "Tekken 7",
+    "3D Fighter",
+    '9999-12-31 23:59:59',
+    '9999-12-31 23:59:59'
+),
+("3",
+    "Dragon Ball Fighter Z",
+    "2D Fighter",
+    '9999-12-31 23:59:59',
+    '9999-12-31 23:59:59'
+),
+("4",
+    "Super Smash Bros. Ultimate",
+    "Platform Fighter",
+    '9999-12-31 23:59:59',
+    '9999-12-31 23:59:59'
+);
 
 INSERT into Characters (characterName, charURL, charType, createdAt, updatedAt, GameId)
 VALUES(
