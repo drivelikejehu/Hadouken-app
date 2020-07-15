@@ -27,6 +27,7 @@ class Games extends Component {
           <div className="col">
             <form onSubmit={this.handleFormSubmit}>
               <div className="row">
+                <div className="col-sm-2"></div>
                 <div className="col">
                   <div className="form-group">
                     <input

@@ -39,7 +39,7 @@ class Signup extends Component {
         <div className="row">
           <div className="col-md-3"></div>
           <div className="col-md-6">
-            <div className="card justify-content-center">
+            <div className="card">
               <div className="card-body">
                 <form>
                   <div className="form-group">

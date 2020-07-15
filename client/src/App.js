@@ -27,6 +27,9 @@ function App() {
               <Route exact path={["/games"]}>
                 <Games />
               </Route>
+              <Route exact path={["/characters"]}>
+                <Games />
+              </Route>
               <Route exact path={["/account"]}>
                 <Account />
               </Route>
