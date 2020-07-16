@@ -8,7 +8,9 @@ class Login extends Component {
         <div className="row">
           <div className="col-md-3"></div>
           <div className="col-md-6">
-          <div className="card">
+            <div className="col">
+              <div className="row">
+              <div className="card">
               <div className="card-body">
                 <form>
                   <div className="form-group">
@@ -39,9 +41,8 @@ class Login extends Component {
                     </label>
                   </div>
                   <div className="row justify-content-center">
-                    <div className="col-3"></div>
-                    <div className="col-3">
-                      {/* this is temporary measure until we build the actual on submit crap */}
+                    {/* <div className="col-3"></div> */}
+                    <div className="col">
                       <a
                         className="btn btn-primary"
                         href="/games"
@@ -50,7 +51,7 @@ class Login extends Component {
                         Log in
                       </a>
                     </div>
-                    <div className="col-3">
+                    <div className="col">
                       <a
                         type="button"
                         className="btn btn-primary"
@@ -60,13 +61,15 @@ class Login extends Component {
                         Sign Up
                       </a>
                     </div>
-                    <div className="col-3"></div>
+                    {/* <div className="col-3"></div> */}
                   </div>
                 </form>
               </div>
             </div>
+              </div>
+            </div>
           </div>
-          <div className="col-md-3"></div>
+          {/* <div className="col-md-3"></div> */}
         </div>
       </div>
     );

@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Shared/Navbar/Navbar";
 import Footer from "./components/Shared/Footer/Footer";
-import Login from "./containers/Login/Login";
+import Login from "./containers/Login";
 import Signup from "./containers/Signup/Signup"
 import Games from "./containers/Games/Games";
 import Combos from "./containers/Combos/Combos";
