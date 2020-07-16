@@ -14,7 +14,7 @@ class Login extends Component {
     });
   };
 
-  handleFormSubmit = () => {
+  handleFormSubmit = (event) => {
     event.preventDefault();
     console.log("HAL");
   };
@@ -24,7 +24,7 @@ class Login extends Component {
       <div className="container">
         <h1>Welcome to Hadouken!</h1>
         <div className="row">
-          <div className="col-sm-3"></div>
+          <div className="col-md-3"></div>
           <div className="col">
             <form onSubmit={this.handleFormSubmit}>
               <div className="card">
@@ -53,29 +53,26 @@ class Login extends Component {
                       onChange={this.handleInputChange}
                     />
                   </div>
-                  <div className="card-body">
-                    <div className="row">
-                      <div className="col">
-                        <Link to="/games">
-                          <button className="btn btn-warning" type="submit">
-                            Login
-                          </button>
-                        </Link>
-                      </div>
-                      <div className="col">
-                        <Link to="/signup">
-                          <button className="btn btn-warning">
-                            Signup
-                          </button>
-                        </Link>
-                      </div>
-                    </div>
+                  <div className="form-group">
+                    <Link to="/games">
+                      <button className="btn btn-primary" type="submit">
+                        Login
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
             </form>
+            <div className="row">
+              <div className="col">
+                <h4>Need to sign up?</h4>
+              <Link to="/signup">
+                <button className="btn btn-primary">Signup</button>
+              </Link>
+              </div>
+            </div>
           </div>
-          <div className="col-sm-3"></div>
+          <div className="col-md-3"></div>
         </div>
       </div>
     );
