@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
   state = {
@@ -14,8 +15,9 @@ class Login extends Component {
   };
 
   handleFormSubmit = () => {
-    console.log("HAL")
-  }
+    event.preventDefault();
+    console.log("HAL");
+  };
 
   render() {
     return (
@@ -52,7 +54,22 @@ class Login extends Component {
                     />
                   </div>
                   <div className="card-body">
-                    bottom
+                    <div className="row">
+                      <div className="col">
+                        <Link to="/games">
+                          <button className="btn btn-warning" type="submit">
+                            Login
+                          </button>
+                        </Link>
+                      </div>
+                      <div className="col">
+                        <Link to="/signup">
+                          <button className="btn btn-warning">
+                            Signup
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
