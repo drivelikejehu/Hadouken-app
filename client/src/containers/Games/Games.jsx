@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import Card from "../../components/Shared/Card/Card";
+import axios from "axios";
 
 class Games extends Component {
   state = {
     result: {},
     search: "",
+    gamesToRender: []
   };
 
   handleFormSubmit = (event) => {
@@ -18,6 +20,22 @@ class Games extends Component {
       [name]: value,
     });
   };
+
+  componentDidMount() {
+axios
+.get('/api/game')
+.then((response) => {
+  console.log(response.data)
+  this.setState({
+gamesToRender: response.data
+  })
+})
+.catch((err) => {
+  if (err) {
+    console.log(err);
+  }
+});
+  }
 
   render() {
     return (
