@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import Card from "../../components/Shared/Card/Card";
+import Card from "../../components/Shared/Card/Card";
 import "./Games.css";
 import axios from "axios";
 
@@ -23,12 +23,19 @@ class Games extends Component {
   };
 
   componentDidMount() {
-    axios.get("/api/game")
-    .then(res => {
-      console.log(res.data)
-    }).catch(err => {
-      console.log(err)
-    })
+    axios
+      .get("/api/game")
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          gamesToRender: response.data,
+        });
+      })
+      .catch((err) => {
+        if (err) {
+          console.log(err);
+        }
+      });
   }
 
   render() {
@@ -60,7 +67,19 @@ class Games extends Component {
             </form>
           </div>
         </div>
-        <div className="row"></div>
+        <div className="row">
+          {this.state.gamesToRender.map((game, index) => (
+            <div className="col-sm-3">
+              <Card
+                key={index}
+                src={game.pic}
+                name={game.name}
+                desc={game.descr}
+                // url="SF2"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
