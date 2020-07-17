@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Card from "../../components/Shared/Card/Card";
+import "./Games.css"
 import axios from "axios";
 
 class Games extends Component {
@@ -63,31 +64,34 @@ game4pic: response.data[3].pic
   render() {
     return (
       <div className="container">
-        <form onSubmit={this.handleFormSubmit}>
-          <div className="row">
-            <div className="col-sm-2"></div>
-            <div className="col">
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Choose your arena"
-                  name="search"
-                  value={this.state.search}
-                  onChange={this.handleInputChange}
-                />
-              </div>
-            </div>
-            <div className="col-sm-2">
-              <button type="submit" className="btn btn-primary">
-                Submit
-              </button>
-            </div>
-          </div>
-        </form>
         <div className="row">
-          <div className="col-2"></div>
-          <div className="col-3">
+          <div className="col">
+            <form onSubmit={this.handleFormSubmit}>
+              <div className="row">
+                <div className="col-sm-2"></div>
+                <div className="col">
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Choose your arena"
+                      name="search"
+                      value={this.state.search}
+                      onChange={this.handleInputChange}
+                    />
+                  </div>
+                </div>
+                <div className="col-sm-2">
+                  <button type="submit" className="btn btn-primary">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-sm-3">
             <Card
               src={this.state.game1pic}
               charname={this.state.game1}
@@ -95,8 +99,7 @@ game4pic: response.data[3].pic
               url="../SF2"
             />
           </div>
-          <div className="col-2"></div>
-          <div className="col-3">
+          <div className="col-sm-3">
             <Card
               src={this.state.game2pic}
               charname={this.state.game2}
@@ -104,9 +107,7 @@ game4pic: response.data[3].pic
               url="../Tekken7"
             />
           </div>
-          <div className="col-2"></div>
-          <div className="col-2"></div>
-          <div className="col-3">
+          <div className="col-sm-3">
             <Card
               src={this.state.game3pic}
               charname={this.state.game3}
@@ -114,8 +115,15 @@ game4pic: response.data[3].pic
               url="../DBFZ"
             />
           </div>
-          <div className="col-2"></div>
-          <div className="col-3">
+          <div className="col-sm-3">
+            <Card
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Super_Smash_Bros._Ultimate.jpg/220px-Super_Smash_Bros._Ultimate.jpg"
+              charname="SSBU"
+              desc="Now with more Min Min!"
+              url="../SSBU"
+            />
+          </div>
+          <div className="col-sm-3">
             <Card
               src={this.state.game4pic}
               charname={this.state.game4}
@@ -123,7 +131,6 @@ game4pic: response.data[3].pic
               url="../SSBU"
             />
           </div>
-          <div className="col-2"></div>
         </div>
       </div>
     );
