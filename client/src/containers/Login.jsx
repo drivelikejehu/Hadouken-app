@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import axios from "axios"
 import { Link } from "react-router-dom";
 
 class Login extends Component {
@@ -16,7 +17,8 @@ class Login extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log("HAL");
+    console.log(this.state.email);
+    console.log(this.state.password);
   };
 
   render() {
@@ -55,7 +57,7 @@ class Login extends Component {
                   </div>
                   <div className="form-group">
                     <Link to="/games">
-                      <button className="btn btn-primary" type="submit">
+                      <button className="btn btn-warning" type="submit">
                         Login
                       </button>
                     </Link>
@@ -65,10 +67,7 @@ class Login extends Component {
             </form>
             <div className="row">
               <div className="col">
-                <h4>Need to sign up?</h4>
-              <Link to="/signup">
-                <button className="btn btn-primary">Signup</button>
-              </Link>
+                <Link to="/signup">Need to create an account?</Link>
               </div>
             </div>
           </div>
