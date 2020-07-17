@@ -73,9 +73,9 @@ class Games extends Component {
               <Card
               key={index}
                 src={game.pic}
-                charname={game.name}
-                desc={game.desc}
-                // url={game.}
+                name={game.name}
+                desc={game.descr}
+                // url="SF2"
               />
             </div>
             

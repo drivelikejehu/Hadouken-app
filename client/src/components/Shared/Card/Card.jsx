@@ -9,9 +9,9 @@ const Card = (props) => {
     <div className="card justify-content-center">
       <img className="card-img-top" src={props.src} alt={props.title} />
       <div className="card-body">
-        <Link to={props.url} charname={props.charname}>
-        <button className="btn btn-primary" onClick={props.onClick} charname={props.charname}>
-          {props.charname}
+        <Link to={props.url} name={props.name}>
+        <button className="btn btn-primary" onClick={props.onClick} name={props.name}>
+          {props.name}
         </button>
         </Link>
       </div>
