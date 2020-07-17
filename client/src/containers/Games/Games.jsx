@@ -1,25 +1,13 @@
 import React, { Component } from "react";
 import Card from "../../components/Shared/Card/Card";
-import "./Games.css"
+import "./Games.css";
 import axios from "axios";
 
 class Games extends Component {
   state = {
     result: {},
     search: "",
-    // gamesToRender: []
-    game1: "",
-    game1descr: "",
-    game1pic: "",
-    game2: "",
-    game2descr: "",
-    game2pic: "",
-    game3: "",
-    game3descr: "",
-    game3pic: "",
-    game4: "",
-    game4descr: "",
-    game4pic: "",
+    gamesToRender: [],
   };
 
   handleFormSubmit = (event) => {
@@ -35,30 +23,19 @@ class Games extends Component {
   };
 
   componentDidMount() {
-axios
-.get('/api/game')
-.then((response) => {
-  console.log(response.data)
-  this.setState({
-game1: response.data[0].name,
-game1descr: response.data[0].descr,
-game1pic: response.data[0].pic,
-game2: response.data[1].name,
-game2descr: response.data[1].descr,
-game2pic: response.data[1].pic,
-game3: response.data[2].name,
-game3descr: response.data[2].descr,
-game3pic: response.data[2].pic,
-game4: response.data[3].name,
-game4descr: response.data[3].descr,
-game4pic: response.data[3].pic
-  })
-})
-.catch((err) => {
-  if (err) {
-    console.log(err);
-  }
-});
+    axios
+      .get("/api/game")
+      .then((response) => {
+        console.log(response);
+        this.setState({
+          gamesToRender: response.data,
+        });
+      })
+      .catch((err) => {
+        if (err) {
+          console.log(err);
+        }
+      });
   }
 
   render() {
@@ -91,46 +68,18 @@ game4pic: response.data[3].pic
           </div>
         </div>
         <div className="row">
-          <div className="col-sm-3">
-            <Card
-              src={this.state.game1pic}
-              charname={this.state.game1}
-              descr={this.state.game1descr}
-              url="../SF2"
-            />
-          </div>
-          <div className="col-sm-3">
-            <Card
-              src={this.state.game2pic}
-              charname={this.state.game2}
-              descr={this.state.game2descr}
-              url="../Tekken7"
-            />
-          </div>
-          <div className="col-sm-3">
-            <Card
-              src={this.state.game3pic}
-              charname={this.state.game3}
-              descr={this.state.game3descr}
-              url="../DBFZ"
-            />
-          </div>
-          <div className="col-sm-3">
-            <Card
-              src="https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Super_Smash_Bros._Ultimate.jpg/220px-Super_Smash_Bros._Ultimate.jpg"
-              charname="SSBU"
-              desc="Now with more Min Min!"
-              url="../SSBU"
-            />
-          </div>
-          <div className="col-sm-3">
-            <Card
-              src={this.state.game4pic}
-              charname={this.state.game4}
-              descr={this.state.game4descr}
-              url="../SSBU"
-            />
-          </div>
+          {this.state.gamesToRender.map((game, index) => (
+            <div className="col-sm-3">
+              <Card
+              key={index}
+                src={game.pic}
+                charname={game.name}
+                desc={game.desc}
+                // url={game.}
+              />
+            </div>
+            
+          ))}
         </div>
       </div>
     );

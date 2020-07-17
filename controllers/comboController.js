@@ -18,7 +18,7 @@ router.post("/", (req, res) => {
       console.log(err);
     });
 });
-
+~
 router.get(":id", (req, res) => {
   db.Combo.findOne({
     where: {
