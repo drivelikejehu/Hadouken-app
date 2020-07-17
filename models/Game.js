@@ -4,7 +4,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    genre: {
+    descr: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    pic: {
       type: DataTypes.STRING,
       allowNull: false,
     },

@@ -1,26 +1,30 @@
-INSERT into Games (id, name, genre, createdAt, updatedAt)
+INSERT into Games (id, name, descr, pic, createdAt, updatedAt)
 VALUES (
     "1",
     "Street Fighter 2",
-    "2D Fighter",
+    "The World Warrior",
+    "https://www.fightersgeneration.com/games/sf2-fly.jpg",
     '9999-12-31 23:59:59',
     '9999-12-31 23:59:59'
 ),
 ("2",
     "Tekken 7",
-    "3D Fighter",
+    "3D Mishima",
+    "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Official_Tekken_7_Logo.jpg/220px-Official_Tekken_7_Logo.jpg",
     '9999-12-31 23:59:59',
     '9999-12-31 23:59:59'
 ),
 ("3",
     "Dragon Ball Fighter Z",
-    "2D Fighter",
+    "Cell's Revenge",
+    "https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/DBFZ_cover_art.jpg/220px-DBFZ_cover_art.jpg",
     '9999-12-31 23:59:59',
     '9999-12-31 23:59:59'
 ),
 ("4",
     "Super Smash Bros. Ultimate",
-    "Platform Fighter",
+    "Now with more Min Min",
+    "https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Super_Smash_Bros._Ultimate.jpg/220px-Super_Smash_Bros._Ultimate.jpg",
     '9999-12-31 23:59:59',
     '9999-12-31 23:59:59'
 );

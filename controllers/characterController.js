@@ -10,13 +10,13 @@ router.get("/", (req, res) => {
   router.get("/select/:id", (req, res) => {
     db.Character.findOne({
       where: req.params.id
-    }).then((user) => res.json(user));
+    }).then((result) => res.json(result));
   });
 
   router.get("/gameselect/:gameid", (req, res) => {
     db.Character.findAll({
       where: req.params.gameid
-    }).then((user) => res.json(user));
+    }).then((result) => res.json(result));
   });
 
 // router.put(":/id", (req, res) => {
