@@ -26,7 +26,7 @@ class Games extends Component {
     axios
       .get("/api/game")
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         this.setState({
           gamesToRender: response.data,
         });
@@ -41,7 +41,7 @@ class Games extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
+        {/* <div className="row">
           <div className="col">
             <form onSubmit={this.handleFormSubmit}>
               <div className="row">
@@ -66,19 +66,18 @@ class Games extends Component {
               </div>
             </form>
           </div>
-        </div>
+        </div> */}
         <div className="row">
           {this.state.gamesToRender.map((game, index) => (
             <div className="col-sm-3">
               <Card
-              key={index}
+                key={index}
                 src={game.pic}
                 name={game.name}
                 desc={game.descr}
                 url={game.name.split(" ").join("")}
               />
             </div>
-            
           ))}
         </div>
       </div>

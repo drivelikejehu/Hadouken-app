@@ -6,6 +6,7 @@ import Footer from "./components/Shared/Footer/Footer";
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import Games from "./containers/Games/Games";
+import Characters from "./containers/Characters/Characters"
 import StreetFighter2 from "./containers/Games/gamePages/StreetFighter2";
 import Combos from "./containers/Combos/Combos";
 import Account from "./containers/Account/Account";
@@ -30,7 +31,7 @@ function App() {
                 <Games />
               </Route>
               <Route exact path={["/characters"]}>
-                <Games />
+                <Characters />
               </Route>
               <Route exact path={["/streetfighter2"]}>
                 <StreetFighter2 />
