@@ -1,6 +1,41 @@
 import React, { Component } from 'react';
-
+import Card from "../../../components/Shared/Card/Card";
+import axios from "axios";
 class StreetFighter2 extends Component {
+    state = {
+        result: {},
+        search: "",
+        charsToRender: [],
+      };
+
+      handleFormSubmit = (event) => {
+        event.preventDefault();
+        console.log("Hey");
+      };
+    
+      handleInputChange = (event) => {
+        const { name, value } = event.target;
+        this.setState({
+          [name]: value,
+        });
+      };
+    
+      componentDidMount() {
+        axios
+          .get("/api/character/gameselect/1")
+          .then((response) => {
+            console.log(response.data);
+            this.setState({
+              charsToRender: response.data,
+            });
+          })
+          .catch((err) => {
+            if (err) {
+              console.log(err);
+            }
+          });
+      }
+
     render() {
         return (
             <div className="container">
@@ -31,14 +66,14 @@ class StreetFighter2 extends Component {
               </div>
             </div>
             <div className="row">
-              {this.state.gamesToRender.map((game, index) => (
+              {this.state.charsToRender.map((character, index) => (
                 <div className="col-sm-3">
                   <Card
                   key={index}
-                    src={game.pic}
-                    name={game.name}
-                    desc={game.descr}
-                    url={game.name.split(" ").join("")}
+                    src={character.charURL}
+                    name={character.characterName}
+                    desc={character.charType}
+                    url={character.characterName.split(" ").join("")}
                   />
                 </div>       
               ))}
