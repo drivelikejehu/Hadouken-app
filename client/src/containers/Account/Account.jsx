@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class Account extends Component {
   state = {
@@ -8,7 +9,9 @@ class Account extends Component {
     birthday: "",
   };
   //Lifecycle method that grabs user info from backend
-  //componentDidMount(){}
+  componentDidMount(){
+    console.log("why u not work")
+  }
 
   handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -36,10 +39,17 @@ class Account extends Component {
 
   handleSubmitBirthday = (event) => {
     event.preventDefault();
-    this.setState({
-      birthday: "",
-    });
     console.log(`birthday is ${this.state.birthday}`);
+    axios.put("api/user/:1",{
+      birthday: this.state.birthday
+    })
+    // can take out this console.log after site is up and running
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   };
 
   render() {

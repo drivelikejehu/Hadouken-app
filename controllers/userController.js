@@ -25,7 +25,15 @@ router.post("/", (req, res) => {
     });
 });
 
-router.get(":id", (req, res) => {
+// purely for testing
+router.get("/", (req, res) => {
+  db.User.findAll({
+}).then((user) => res.json(user));
+})
+// purely for testing
+
+
+router.get("/:id", (req, res) => {
   db.User.findOne({
     where: {
       id: req.params.id,
@@ -41,7 +49,7 @@ router.get("/username/:username", (req, res) => {
   }).then((user) => res.json(user));
 });
 
-router.put(":/id", (req, res) => {
+router.put("/:id", (req, res) => {
   const updateUser = {
     username: req.body.username,
     birthday: req.body.birthday,
@@ -49,7 +57,7 @@ router.put(":/id", (req, res) => {
   };
   db.User.update(updateUser, {
     where: {
-      id: req.params.id,
+      id: req.params.id
     },
   }).then(() => {
     res.json(updatedUser);
