@@ -4,19 +4,19 @@ const db = require("../models");
 
 router.get("/", (req, res) => {
     db.Character.findAll({
-    }).then((user) => res.json(user));
+    }).then((character) => res.json(character));
   });
 
-  router.get("/select/:id", (req, res) => {
+  router.get("/:id", (req, res) => {
     db.Character.findOne({
-      where: req.params.id
-    }).then((result) => res.json(result));
+      where: {id: req.params.id}
+    }).then((character) => res.json(character));
   });
 
-  router.get("/gameselect/:gameid", (req, res) => {
+  router.get("/gameselect/:GameId", (req, res) => {
     db.Character.findAll({
-      where: req.params.gameid
-    }).then((result) => res.json(result));
+      where: {GameId: req.params.GameId}
+    }).then((character) => res.json(character));
   });
 
 // router.put(":/id", (req, res) => {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class Signup extends Component {
   state = {
@@ -20,6 +21,19 @@ class Signup extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     console.log(event.target);
+    axios.post("api/user", {
+      firstName: this.state.firstName,
+lastName: this.state.lastName,
+email: this.state.email,
+password: this.state.password,
+username: this.state.username
+    }).catch((err,response) => {
+      console.log(err);
+      this.setState({
+        error: true,
+        errorMessage: err.response.data.message
+      })
+    });
   };
 
   // handleFormSubmit = (event) => {
@@ -85,7 +99,7 @@ class Signup extends Component {
                   <div className="form-group">
                     <input
                       className="form-control"
-                      type="text"
+                      type="password"
                       name="password"
                       value={this.state.password}
                       placeholder="Password"
@@ -95,7 +109,7 @@ class Signup extends Component {
                   <div className="form-group">
                     <input
                       className="form-control"
-                      type="text"
+                      type="password"
                       name="confirmPass"
                       value={this.state.confirmPass}
                       placeholder="Confirm Password"
