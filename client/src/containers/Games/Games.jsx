@@ -75,7 +75,7 @@ class Games extends Component {
                 src={game.pic}
                 name={game.name}
                 desc={game.descr}
-                // url="SF2"
+                url={game.name.split(" ").join("")}
               />
             </div>
             
