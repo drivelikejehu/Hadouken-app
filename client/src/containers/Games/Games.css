@@ -10,3 +10,8 @@
       margin: 10px auto
   }
   
+  body {
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
+ }

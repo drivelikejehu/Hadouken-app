@@ -1,44 +1,43 @@
 import React, { Component } from 'react';
 import Card from "../../../components/Shared/Card/Card";
 import axios from "axios";
-class StreetFighter2 extends Component {
-    state = {
-        result: {},
-        search: "",
-        charsToRender: [],
-      };
-
-      handleFormSubmit = (event) => {
-        event.preventDefault();
-        console.log("Hey");
-      };
+class SuperSmashBrothersUltimate extends Component {
+        state = {
+            result: {},
+            search: "",
+            charsToRender: [],
+          };
     
-      handleInputChange = (event) => {
-        const { name, value } = event.target;
-        this.setState({
-          [name]: value,
-        });
-      };
-    
-      componentDidMount() {
-        axios
-          .get("/api/character/gameselect/1")
-          .then((response) => {
-            console.log(response.data);
+          handleFormSubmit = (event) => {
+            event.preventDefault();
+            console.log("Hey");
+          };
+        
+          handleInputChange = (event) => {
+            const { name, value } = event.target;
             this.setState({
-              charsToRender: response.data,
+              [name]: value,
             });
-          })
-          .catch((err) => {
-            if (err) {
-              console.log(err);
-            }
-          });
-      }
-
-    render() {
+          };
+        
+          componentDidMount() {
+            axios
+              .get("/api/character/gameselect/4")
+              .then((response) => {
+                console.log(response.data);
+                this.setState({
+                  charsToRender: response.data,
+                });
+              })
+              .catch((err) => {
+                if (err) {
+                  console.log(err);
+                }
+              })
+          }
+          render(){
         return (
-            <div className="container">
+          <div className="container">
             <div className="row">
               <div className="col">
                 <form onSubmit={this.handleFormSubmit}>
@@ -83,4 +82,4 @@ class StreetFighter2 extends Component {
     }
 }
 
-export default StreetFighter2;
+export default SuperSmashBrothersUltimate;
