@@ -71,12 +71,11 @@ class Games extends Component {
           {this.state.gamesToRender.map((game, index) => (
             <div className="col-sm-3">
               <Card
-                // key={index}
+                key={index}
                 src={game.pic}
                 name={game.name}
                 desc={game.descr}
-
-                url="SF2"
+                url={game.name.split(" ").join("")}
               />
             </div>
           ))}

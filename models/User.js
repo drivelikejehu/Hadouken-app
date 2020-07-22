@@ -3,12 +3,12 @@ module.exports = function (sequelize, DataTypes) {
     firstName: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: { is: /^[a-zA-Z]{2,13}$/}
+      // validate: { is: /^[a-zA-Z]{2,13}$/}
     },
     lastName: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: { is: /^[a-zA-Z]{2,13}$/}
+      // validate: { is: /^[a-zA-Z]{2,13}$/}
     },
     email: {
       type: DataTypes.STRING,
@@ -19,13 +19,13 @@ module.exports = function (sequelize, DataTypes) {
     password: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: { is: /^(?=.*[0-9])(?=.*[a-zA-Z])^(?!.*').{6,}$/g },
+      // validate: { is: /^(?=.*[0-9])(?=.*[a-zA-Z])^(?!.*').{6,}$/g },
     },
     username: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
-      validate: { is: /^[a-z0-9_-]{3,15}$/ },
+      // validate: { is: /^[a-z0-9_-]{3,15}$/ },
     },
     birthday: {
         type: DataTypes.DATE,
