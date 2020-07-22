@@ -22,7 +22,7 @@ VALUES (
     '9999-12-31 23:59:59'
 ),
 ("4",
-    "Super Smash Bros. Ultimate",
+    "Super Smash Bros Ultimate",
     "Now with more Min Min",
     "https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Super_Smash_Bros._Ultimate.jpg/220px-Super_Smash_Bros._Ultimate.jpg",
     '9999-12-31 23:59:59',
