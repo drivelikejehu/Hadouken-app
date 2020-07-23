@@ -72,7 +72,7 @@ class StreetFighter2 extends Component {
                   key={index}
                     src={character.charURL}
                     name={character.characterName}
-                    desc={character.charType}
+                    // desc={character.charType}
                     url={character.characterName.split(" ").join("")}
                   />
                 </div>       
