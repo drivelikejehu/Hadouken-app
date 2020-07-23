@@ -8,11 +8,6 @@ class Games extends Component {
     gamesToRender: [],
   };
 
-  handleFormSubmit = (event) => {
-    event.preventDefault();
-    console.log("Hey");
-  };
-
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({
@@ -42,9 +37,11 @@ class Games extends Component {
           {this.state.gamesToRender.map((game) => (
             <div className="col-sm-3">
               <Card 
-                {...game}
+                src={game.pic}
+                name={game.name}
+                desc={game.descr}
                 url={game.name.split(" ").join("")}
-                key={game.name}
+                key={game.id}
               />
             </div>
           ))}

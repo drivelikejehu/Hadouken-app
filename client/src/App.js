@@ -6,14 +6,14 @@ import Footer from "./components/Shared/Footer/Footer";
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import Games from "./containers/Games/Games";
-import Characters from "./containers/Characters/Characters"
+import Characters from "./containers/Characters/Characters";
 import StreetFighter2 from "./containers/Games/gamePages/StreetFighter2";
 import Combos from "./containers/Combos/Combos";
 import Account from "./containers/Account/Account";
 import NotFound from "./containers/NotFound/NotFound";
 import SuperSmashBrothersUltimate from "./containers/Games/gamePages/SuperSmashBrothersUltimate";
 
-function App() {
+function App(props) {
   return (
     <>
       <Router>
@@ -30,6 +30,7 @@ function App() {
               <Route exact path={["/games"]}>
                 <Games />
               </Route>
+              {/* <Route path="/games" render={(props) => (<Games {...props} />)} /> */}
               <Route exact path={["/characters"]}>
                 <Characters />
               </Route>

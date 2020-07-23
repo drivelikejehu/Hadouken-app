@@ -10,7 +10,6 @@ class StreetFighter2 extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log("Hey");
   };
 
   handleInputChange = (event) => {
@@ -24,7 +23,6 @@ class StreetFighter2 extends Component {
     axios
       .get("/api/character/gameselect/1")
       .then((response) => {
-        console.log(response.data);
         this.setState({
           charsToRender: response.data,
         });
