@@ -3,16 +3,14 @@ import "./Card.css";
 import { Link } from "react-router-dom";
 
 
-const Card = (props) => {
+const Card = ({pic, name, url}) => {
 
   return (
-    <div className="card justify-content-center" key={props.key}>
-      <img className="card-img-top" src={props.src} alt={props.name} />
+    <div className="card justify-content-center">
+      <img className="card-img-top" src={pic} alt={name} />
       <div className="card-body">
-        <Link to={props.url} name={props.name}>
-        {/* <button className="btn btn-primary" onClick={props.onClick} name={props.name}> */}
-          {props.name}
-        {/* </button> */}
+        <Link to={url} name={name}>
+          {name}
         </Link>
       </div>
     </div>
