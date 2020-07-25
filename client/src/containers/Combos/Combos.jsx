@@ -5,12 +5,24 @@ class Combos extends Component {
     state = {
       result: {},
       search: "",
-      comboToRender: [], 
+      comboToRender: [],
+      comboName: "",
+      comboString:""
     };
 
     handleFormSubmit = (event) => {
       event.preventDefault();
-      console.log("this works right?")
+      console.log(event.target);
+      axios.post("api/combo", {
+        comboName: this.state.comboName,
+        comboString: this.state.comboString
+      }).catch((err, response) => {
+        console.log(err);
+        this.setState({
+          error: true,
+          errorMessage: err.response.data.message,
+        });
+      });
     }
 
     handleInputChange = (event) => {
@@ -36,6 +48,7 @@ class Combos extends Component {
         }
       })
     }
+
 
 
   render() {
@@ -108,11 +121,13 @@ class Combos extends Component {
               <div className="form-group">
                 <label htmlFor="ComboNamer">Combo Name</label>
                 <input
-                  type="email"
+                  type="text"
                   className="form-control"
-                  id="ComboNamer"
-                  aria-describedby="ComboNamer"
+                  name="comboName"
+                  value={this.state.comboName}
+                  // aria-describedby="ComboNamer"
                   placeholder="Enter your combo's name"
+                  onChange={this.handleInputChange}
                 />
               </div>
               <div className="form-group">
@@ -120,9 +135,11 @@ class Combos extends Component {
                 <input
                   type="text"
                   className="form-control"
-                  id="ComboInputs"
+                  value={this.state.comboString}
+                  name="comboString"
                   placeholder="Input your combo's commands here"
-                />
+                  onChange={this.handleInputChange}
+               />
               </div>
               <div className="form-check">
                 <input
