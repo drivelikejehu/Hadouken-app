@@ -1,7 +1,45 @@
-import React from "react";
+import React, { Component } from 'react';
+import axios from 'axios';
 
-const Combos = (props) => {
-  return (
+class Combos extends Component {
+    state = {
+      result: {},
+      search: "",
+      comboToRender: [], 
+    };
+
+    handleFormSubmit = (event) => {
+      event.preventDefault();
+      console.log("this works right?")
+    }
+
+    handleInputChange = (event) => {
+      event.preventDefault();
+      const { name, value } = event.target;
+      this.setState({
+        [name]: value,
+      });
+    }
+
+    componentDidMount() {
+      axios
+      .get("/api/combo")
+      .then((response) => {
+        console.log(response.data);
+        this.setState({
+          comboToRender: response.data
+        });
+      })
+      .catch((err) => {
+        if (err) {
+          console.log(err);
+        }
+      })
+    }
+
+
+  render() {
+    return (
     <>
       <div className="container">
         <div className="row">
@@ -15,20 +53,20 @@ const Combos = (props) => {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                {props.char}'s Saved Combos
+                {/* {char}'s Saved Combos */}
               </button>
               <div
                 className="dropdown-menu"
                 aria-labelledby="dropdownMenuButton"
               >
                 <a className="dropdown-item" href="/">
-                  {props.combo1}
+                  {/* {combo1} */}
                 </a>
                 <a className="dropdown-item" href="/">
-                  {props.combo2}
+                  {/* {combo2} */}
                 </a>
                 <a className="dropdown-item" href="/">
-                  {props.combo3}
+                  {/* {combo3} */}
                 </a>
               </div>
             </div>
@@ -36,7 +74,7 @@ const Combos = (props) => {
         </div>
         <div className="row">
           <div className="col-3">
-            <h3>Combo glossary</h3>
+            <h3>Combo Glossary</h3>
             <table className="table">
               <thead>
                 <tr>
@@ -48,17 +86,17 @@ const Combos = (props) => {
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>{props.combo1}</td>
+                  {/* <td>{combo1}</td> */}
                   <td>lk</td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
-                  <td>{props.combo2}</td>
+                  {/* <td>{combo2}</td> */}
                   <td>QCF-K,Rp</td>
                 </tr>
                 <tr>
                   <th scope="row">3</th>
-                  <td>{props.combo3}</td>
+                  {/* <td>{combo3}</td> */}
                   <td>dp, lk, rk</td>
                 </tr>
               </tbody>
@@ -96,7 +134,8 @@ const Combos = (props) => {
                   Are you sure?
                 </label>
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary"
+              onClick={this.handleFormSubmit}>
                 Submit
               </button>
             </form>
@@ -104,7 +143,8 @@ const Combos = (props) => {
         </div>
       </div>
     </>
-  );
-};
+    );
+  }
+}
 
 export default Combos;
