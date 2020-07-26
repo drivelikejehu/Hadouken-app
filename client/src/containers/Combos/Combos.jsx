@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ComboList from "../../components/ComboList/ComboList"
 
 class Combos extends Component {
     state = {
@@ -93,7 +94,9 @@ class Combos extends Component {
                   <th scope="col">Commands</th>
                 </tr>
               </thead>
-             
+             <ComboList
+            combosToRender={this.state.combosToRender}
+             />
             </table>
           </div>
           <div className="col-2"></div>
