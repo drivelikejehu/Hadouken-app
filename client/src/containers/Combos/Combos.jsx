@@ -35,20 +35,18 @@ class Combos extends Component {
 
     componentDidMount() {
       axios
-      .get("/api/combo")
-      .then((response) => {
-        console.log(response.data);
-        this.setState({
-          comboToRender: response.data
+        .get("/api/combo")
+        .then((response) => {
+          this.setState({
+            combosToRender: response.data,
+          });
+        })
+        .catch((err) => {
+          if (err) {
+            console.log(err);
+          }
         });
-      })
-      .catch((err) => {
-        if (err) {
-          console.log(err);
-        }
-      })
     }
-
 
 
   render() {
