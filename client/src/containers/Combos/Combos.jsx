@@ -5,14 +5,13 @@ class Combos extends Component {
     state = {
       result: {},
       search: "",
-      comboToRender: [],
+      combosToRender: [],
       comboName: "",
       comboString:""
     };
 
     handleFormSubmit = (event) => {
       event.preventDefault();
-      console.log(event.target);
       axios.post("api/combo", {
         comboName: this.state.comboName,
         comboString: this.state.comboString
@@ -94,23 +93,7 @@ class Combos extends Component {
                   <th scope="col">Commands</th>
                 </tr>
               </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  {/* <td>{combo1}</td> */}
-                  <td>lk</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  {/* <td>{combo2}</td> */}
-                  <td>QCF-K,Rp</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  {/* <td>{combo3}</td> */}
-                  <td>dp, lk, rk</td>
-                </tr>
-              </tbody>
+             
             </table>
           </div>
           <div className="col-2"></div>
