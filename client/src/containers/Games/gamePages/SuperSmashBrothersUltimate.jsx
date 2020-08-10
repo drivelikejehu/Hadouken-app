@@ -72,7 +72,7 @@ class SuperSmashBrothersUltimate extends Component {
                     src={character.charURL}
                     name={character.characterName}
                     // desc={character.charType}
-                    url={character.characterName.split(" ").join("")}
+                    url={'/combos'}
                   />
                 </div>       
               ))}

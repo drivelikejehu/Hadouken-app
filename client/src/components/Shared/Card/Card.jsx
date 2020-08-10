@@ -9,10 +9,11 @@ const Card = (props) => {
     <div className="card justify-content-center" key={props.key}>
       <img className="card-img-top" src={props.src} alt={props.name} />
       <div className="card-body">
-        <Link to={props.url} name={props.name}>
-        {/* <button className="btn btn-primary" onClick={props.onClick} name={props.name}> */}
+        <Link to={{
+        pathname: props.url, state:{characterName: props.name}}}>
+        <button className="btn btn-primary" onClick={props.onClick} name={props.name}>
           {props.name}
-        {/* </button> */}
+         </button>
         </Link>
       </div>
     </div>
