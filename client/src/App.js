@@ -36,9 +36,8 @@ function App() {
               <Route exact path={["/streetfighter2"]}>
                 <StreetFighter2 />
               </Route>
-              <Route path='/StreetFighter2/:character'>
-                <Combos/>
-                </Route>   
+              <Route path='/StreetFighter2/:character'
+              component={Combos}/>   
               <Route exact path={["/SuperSmashBrosUltimate"]}>
                 <SuperSmashBrothersUltimate />
               </Route>
@@ -47,9 +46,8 @@ function App() {
               <Route exact path={["/account"]}>
                 <Account />
               </Route>
-              <Route exact path={["/combos"]}>
-                <Combos />
-              </Route>
+              <Route exact path={["/combos"]}
+              component={Combos}/>
               <Route exact path={["*"]}>
                 <NotFound />
               </Route>

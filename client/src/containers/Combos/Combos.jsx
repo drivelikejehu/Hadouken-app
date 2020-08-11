@@ -13,7 +13,20 @@ class Combos extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props.match.params)
+    // if(this.props.match.params.character ===! null){   
+    // axios
+    // .get("/api/combo/")
+    // .then((response) => {
+    //   this.setState({
+    //     combosToRender: response.data,
+    //   });
+    // })
+    // .catch((err) => {
+    //   if (err) {
+    //     console.log(err);
+    //   }
+    // });
+    // }
     axios
       .get("/api/combo/")
       .then((response) => {
@@ -55,6 +68,7 @@ class Combos extends Component {
     return (
       <>
         <div className="container">
+    <h1>{this.props.match.params.character}'s Combo Page</h1>
           <div className="row">
             <div className="col">
               <div className="dropdown">
