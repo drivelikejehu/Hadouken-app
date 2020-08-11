@@ -73,7 +73,7 @@ class StreetFighter2 extends Component {
                     src={character.charURL}
                     name={character.characterName}
                     // desc={character.charType}
-                    url={character.characterName.split(" ").join("")}
+                    url={"/StreetFighter2/" + character.characterName.split(" ").join("")}
                   />
                 </div>       
               ))}

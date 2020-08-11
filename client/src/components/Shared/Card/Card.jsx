@@ -10,7 +10,7 @@ const Card = (props) => {
       <img className="card-img-top" src={props.src} alt={props.name} />
       <div className="card-body">
         <Link to={{
-        pathname: props.url, state:{characterName: props.name}}}>
+        pathname: props.url}}>
         <button className="btn btn-primary" onClick={props.onClick} name={props.name}>
           {props.name}
          </button>
