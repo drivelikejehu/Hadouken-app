@@ -13,11 +13,7 @@ class Combos extends Component {
   };
 
   componentDidMount() {
-    // const {characterName}  = this.props.location.state;
-    // console.log(characterName)
-    // this.setState({
-    //   characterName: characterName
-    // });
+    console.log(this.props.match.params)
     axios
       .get("/api/combo/")
       .then((response) => {

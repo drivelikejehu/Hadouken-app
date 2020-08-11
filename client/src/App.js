@@ -42,9 +42,8 @@ function App() {
               <Route exact path={["/SuperSmashBrosUltimate"]}>
                 <SuperSmashBrothersUltimate />
               </Route>
-              <Route path='/ssbu/:characters'>
-                <Combos />
-                </Route>
+              <Route path='/ssbu/:characters'
+              component={Combos}/>
               <Route exact path={["/account"]}>
                 <Account />
               </Route>
