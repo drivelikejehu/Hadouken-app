@@ -60,7 +60,24 @@ class StreetFighter2 extends Component {
                   </button>
                 </div>
               </div>
+<<<<<<< HEAD
             </form>
+=======
+            </div>
+            <div className="row">
+              {this.state.charsToRender.map((character, index) => (
+                <div className="col-sm-3">
+                  <Card
+                  key={index}
+                    src={character.charURL}
+                    name={character.characterName}
+                    // desc={character.charType}
+                    url={"/StreetFighter2/" + character.characterName.split(" ").join("")}
+                  />
+                </div>       
+              ))}
+            </div>
+>>>>>>> fb58b8ed6970e6bdc84106b45cb58b4cc615f33f
           </div>
         </div>
         <div className="row">

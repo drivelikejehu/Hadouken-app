@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import axios from "axios"
 import { Link } from "react-router-dom";
 
 class Login extends Component {
@@ -17,8 +16,7 @@ class Login extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.email);
-    console.log(this.state.password);
+    console.log("HAL");
   };
 
   render() {
@@ -46,7 +44,7 @@ class Login extends Component {
                   <div className="form-group">
                     <label htmlFor="inputPassword">Password</label>
                     <input
-                      type="text"
+                      type="password"
                       className="form-control"
                       id="inputPassword"
                       aria-describedby="emailHelp"
@@ -57,7 +55,7 @@ class Login extends Component {
                   </div>
                   <div className="form-group">
                     <Link to="/games">
-                      <button className="btn btn-warning" type="submit">
+                      <button className="btn btn-primary" type="submit">
                         Login
                       </button>
                     </Link>
@@ -67,7 +65,10 @@ class Login extends Component {
             </form>
             <div className="row">
               <div className="col">
-                <Link to="/signup">Need to create an account?</Link>
+                <h4>Need to sign up?</h4>
+              <Link to="/signup">
+                <button className="btn btn-primary">Signup</button>
+              </Link>
               </div>
             </div>
           </div>

@@ -8,8 +8,11 @@ const Card = ({src, name, url, id}) => {
     <div className="card justify-content-center">
       <img className="card-img-top" src={src} alt={name} />
       <div className="card-body">
-        <Link to={url} key={id}>
-          {name}
+        <Link to={{
+        pathname: props.url}}>
+        <button className="btn btn-primary" onClick={props.onClick} name={props.name}>
+          {props.name}
+         </button>
         </Link>
       </div>
     </div>

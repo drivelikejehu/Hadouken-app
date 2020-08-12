@@ -37,15 +37,18 @@ function App(props) {
               <Route exact path={["/streetfighter2"]}>
                 <StreetFighter2 />
               </Route>
+              <Route path='/StreetFighter2/:character'
+              component={Combos}/>   
               <Route exact path={["/SuperSmashBrosUltimate"]}>
                 <SuperSmashBrothersUltimate />
               </Route>
+              <Route path='/ssbu/:character'
+              component={Combos}/>
               <Route exact path={["/account"]}>
                 <Account />
               </Route>
-              <Route exact path={["/combos"]}>
-                <Combos />
-              </Route>
+              <Route exact path={["/combos"]}
+              component={Combos}/>
               <Route exact path={["*"]}>
                 <NotFound />
               </Route>

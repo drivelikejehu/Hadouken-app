@@ -14,7 +14,9 @@ module.exports = (sequelize, DataTypes) => {
           through: "ComboUser",
           foreignKey: "UserId"
       });
-      Combo.belongsTo(models.Character, {as: "ComboID"})
+      Combo.belongsToMany(models.Character, 
+        {through: "characterCombo",
+      foreignKey: "characterId"})
     };
     return Combo;
   };

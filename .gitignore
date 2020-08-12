@@ -102,3 +102,5 @@ dist
 
 # TernJS port file
 .tern-port
+# Config.json to avoid exposing db passwords
+./config.json

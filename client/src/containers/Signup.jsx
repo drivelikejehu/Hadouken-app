@@ -21,19 +21,21 @@ class Signup extends Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     console.log(event.target);
-    axios.post("api/user", {
-      firstName: this.state.firstName,
-lastName: this.state.lastName,
-email: this.state.email,
-password: this.state.password,
-username: this.state.username
-    }).catch((err,response) => {
-      console.log(err);
-      this.setState({
-        error: true,
-        errorMessage: err.response.data.message
+    axios
+      .post("api/user", {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        email: this.state.email,
+        password: this.state.password,
+        username: this.state.username,
       })
-    });
+      .catch((err, response) => {
+        console.log(err);
+        this.setState({
+          error: true,
+          errorMessage: err.response.data.message,
+        });
+      });
   };
 
   // handleFormSubmit = (event) => {
