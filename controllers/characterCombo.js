@@ -5,8 +5,8 @@ const { Op } = require("sequelize");
 
 router.post("/", (req, res) => {
   const newCharacterCombo = {
-    gameId: req.body.gameId,
-    userId: req.body.userId,
+    comboId: req.body.comboId,
+    characterId: req.body.characterId,
   };
   db.characterCombo.create(newCharacterCombo)
     .then(() => {
@@ -27,7 +27,7 @@ router.post("/", (req, res) => {
     });
 });
 
-router.delete("/:characterId/:userId", (req, res) => {
+router.delete("/:gameId/:characterId", (req, res) => {
   db.characterCombo.destroy({
     where: {
       characterId: req.params.characterId,
@@ -53,12 +53,12 @@ router.delete("/:characterId/:userId", (req, res) => {
 router.get("/characters/:id", (req, res) => {
   db.characterCombo.findAll({
     where: {
-      comboId: req.params.id,
+      characterId: req.params.id,
     },
     include: [
       {
-        model: db.Character,
-        attributes: ["characterName"],
+        model: db.Combo,
+        attributes: ["comboName","comboString"],
       },
     ],
   })
