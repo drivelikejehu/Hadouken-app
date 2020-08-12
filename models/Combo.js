@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     Combo.associate = (models) => {
       Combo.belongsToMany(models.User, {
           through: "ComboUser",
-          foreignKey: "UserId"
+          foreignKey: "userId"
       });
       Combo.belongsToMany(models.Character, 
         {through: "characterCombo",
