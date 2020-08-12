@@ -3,12 +3,12 @@ module.exports = function (sequelize, DataTypes) {
       "UserCharacter",
       {
         characterId: DataTypes.INTEGER,
-        USerId: DataTypes.INTEGER,
+        UserId: DataTypes.INTEGER,
       },
     );
     UserCharacter.associate = function (models) {
-      UserCharacter.belongsTo(models.Character, {foreignKey: "characterId"});
-      UserCharacter.belongsTo(models.User, {foreignKey: "userId"});
+      UserCharacter.belongsTo(models.Character, {foreignKey: "CharacterId"});
+      UserCharacter.belongsTo(models.User, {foreignKey: "UserId"});
     };
     return UserCharacter;
   };

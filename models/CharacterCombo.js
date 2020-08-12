@@ -7,8 +7,8 @@ module.exports = function (sequelize, DataTypes) {
       },
     );
     CharacterCombo.associate = function (models) {
-      CharacterCombo.belongsTo(models.Character, {foreignKey: "characterId"});
-      CharacterCombo.belongsTo(models.Combo, {foreignKey: "comboId"});
+      CharacterCombo.belongsTo(models.Character, {foreignKey: "CharacterId"});
+      CharacterCombo.belongsTo(models.Combo, {foreignKey: "ComboId"});
     };
     return CharacterCombo;
   };
