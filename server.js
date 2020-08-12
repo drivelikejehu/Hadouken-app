@@ -20,6 +20,7 @@ app.get("/api/config", (req, res) => {
   });
 });
 
+
 app.use(express.static("client/build"));
 
 app.use("/api/user", userController)

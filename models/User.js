@@ -38,6 +38,7 @@ module.exports = function (sequelize, DataTypes) {
   });
   User.associate = (models) => {
     User.hasMany(models.Combo);
+    User.hasMany(models.Character)
   };
   return User;
 };

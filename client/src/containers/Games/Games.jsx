@@ -26,7 +26,6 @@ class Games extends Component {
     axios
       .get("/api/game")
       .then((response) => {
-        // console.log(response);
         this.setState({
           gamesToRender: response.data,
         });
