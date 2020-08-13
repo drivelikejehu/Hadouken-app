@@ -27,11 +27,24 @@ router.post("/", (req, res) => {
     });
 });
 
-router.delete("/:gameId/:characterId", (req, res) => {
+  router.put(":/id", (req, res) => {
+    const updateCharCom = {
+      
+    };
+    db.characterCombo.update(updateCharCom, {
+      where: {
+        id: req.params.id,
+      },
+    }).then(() => {
+      res.json(charCom);
+    });
+  });
+
+router.delete("/:characterId/:comboId", (req, res) => {
   db.characterCombo.destroy({
     where: {
       characterId: req.params.characterId,
-      userId: req.params.userId,
+      comboId: req.params.comboId,
     },
   })
     .then(() => {
