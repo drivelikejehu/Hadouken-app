@@ -77,6 +77,15 @@ class Combos extends Component {
       [name]: value,
     });
   };
+  handleDelete = (event) => {
+    
+    alert("Delete button is working")
+  }
+
+  handleEdit = (event) => {
+   
+    alert("Edit button is working")
+  }
 
   render() {
     return (
@@ -84,34 +93,6 @@ class Combos extends Component {
         <div className="container">
     <h1>{this.props.match.params.character}'s Combo Page</h1>
           <div className="row">
-            <div className="col">
-              <div className="dropdown">
-                <button
-                  className="btn btn-secondary dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  {/* {char}'s Saved Combos */}
-                </button>
-                <div
-                  className="dropdown-menu"
-                  aria-labelledby="dropdownMenuButton"
-                >
-                  <a className="dropdown-item" href="/">
-                    {/* {combo1} */}
-                  </a>
-                  <a className="dropdown-item" href="/">
-                    {/* {combo2} */}
-                  </a>
-                  <a className="dropdown-item" href="/">
-                    {/* {combo3} */}
-                  </a>
-                </div>
-              </div>
-            </div>
           </div>
           <div className="row">
             <div className="col-3">
@@ -124,7 +105,9 @@ class Combos extends Component {
                     <th scope="col">Commands</th>
                   </tr>
                 </thead>
-                <ComboList combosToRender={this.state.combosToRender} />
+                <ComboList combosToRender={this.state.combosToRender} 
+                handleDelete={this.handleDelete}
+                handleEdit={this.handleEdit}/>
               </table>
             </div>
             <div className="col-2"></div>

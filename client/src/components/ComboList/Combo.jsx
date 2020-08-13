@@ -6,12 +6,24 @@ const Combo = (props) => {
       <td>{props.id}</td>
       <td>{props.comboName}</td>
       <td>{props.comboString}</td>
-      <td><button className="btn btn-info">
-        Edit
-        </button></td>
-        <td><button className="btn btn-danger">
-        Delete
-        </button></td>
+      {/* <td>
+        <button
+          className="btn btn-info"
+          type="submit"
+          onClick={() => props.handleEdit(props.id)}
+        >
+          Edit
+        </button>
+      </td> */}
+      <td>
+        <button
+          className="btn btn-danger"
+          type="submit"
+          onClick={() => props.handleDelete(props.id)}
+        >
+          Delete
+        </button>
+      </td>
     </tr>
   );
 };
