@@ -4,14 +4,14 @@ const db = require("../models");
 const { Op } = require("sequelize");
 
 router.post("/", (req, res) => {
-  const newUserCombo = {
+  const newcomboUser = {
     comboId: req.body.comboId,
     userId: req.body.userId,
   };
-  db.UserCombo.create(newUserCombo)
+  db.comboUser.create(newcomboUser)
     .then(() => {
       res.json([
-        newUserCombo,
+        newcomboUser,
         {
           success: true,
         },
@@ -22,13 +22,23 @@ router.post("/", (req, res) => {
       res.status(500);
       res.json({
         success: false,
-        message: "Failed to create UserCombo.",
+        message: "Failed to create comboUser.",
       });
     });
 });
 
+router.get("/userRecent", (req, res) => {
+  db.Combo.findAll({
+    where: {
+      userId: req.params.userId
+    },
+    limit: 5,
+    order: '"updatedAt" DESC'
+  })
+}) 
+
 router.delete("/:comboId/:userId", (req, res) => {
-  db.UserCombo.destroy({
+  db.comboUser.destroy({
     where: {
         comboId: req.params.comboId,
       userId: req.params.userId,
@@ -44,7 +54,7 @@ router.delete("/:comboId/:userId", (req, res) => {
       res.status(500);
       res.json({
         success: false,
-        message: "Failed to delete UserCombo.",
+        message: "Failed to delete comboUser.",
       });
     });
 });
