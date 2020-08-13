@@ -53,6 +53,20 @@ class Combos extends Component {
           error: true,
           errorMessage: err.response.data.message,
         });
+      }).then(() => {
+        console.log("comboList updated");
+        axios
+        .get("/api/combo/")
+        .then((response) => {
+          this.setState({
+            combosToRender: response.data,
+          });
+        })
+        .catch((err) => {
+          if (err) {
+            console.log(err);
+          }
+        })
       });
   };
 
