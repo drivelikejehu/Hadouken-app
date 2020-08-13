@@ -77,9 +77,25 @@ class Combos extends Component {
       [name]: value,
     });
   };
-  handleDelete = (event) => {
-    
-    alert("Delete button is working")
+  handleDelete = (comboId) => {
+    console.log(comboId)
+    axios
+    .delete(`api/combo/${comboId}`)
+    .then(() => {
+      console.log("combo deleted");
+      axios
+      .get("/api/combo/")
+      .then((response) => {
+        this.setState({
+          combosToRender: response.data,
+        });
+      })
+      .catch((err) => {
+        if (err) {
+          console.log(err);
+        }
+      })
+    })
   }
 
   handleEdit = (event) => {
