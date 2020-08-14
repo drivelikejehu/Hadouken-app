@@ -24,6 +24,7 @@ class Login extends Component {
         console.log(response);
       })
       .catch((error) => {
+          alert("Your Email or password credentials were incorrect, please retry.")
         console.log(error);
       });
   };
