@@ -2,11 +2,11 @@ require("dotenv").config();
 const path = require("path");
 const express = require("express");
 const db = require("./models");
-// const userController = require("./controllers/userController");
-// const gameController = require("./controllers/gameController");
-// const characterController = require("./controllers/characterController");
-// const comboController = require("./controllers/comboController");
-// const comboUserController = require("./controllers/comboUserController");
+const userController = require("./controllers/userController");
+const gameController = require("./controllers/gameController");
+const characterController = require("./controllers/characterController");
+const comboController = require("./controllers/comboController");
+const comboUserController = require("./controllers/comboUserController");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
@@ -72,11 +72,11 @@ app.post("/api/users", (req, res) => {
   }
 });
 
-// app.use("/api/user", userController);
-// app.use("/api/game", gameController);
-// app.use("/api/character", characterController);
-// app.use("/api/combo", comboController);
-// app.use("/api/comboUser", comboUserController);
+app.use("/api/user", userController);
+app.use("/api/game", gameController);
+app.use("/api/character", characterController);
+app.use("/api/combo", comboController);
+app.use("/api/comboUser", comboUserController);
 
 app.use(express.static("client/build"));
 
