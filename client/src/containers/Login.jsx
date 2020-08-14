@@ -1,5 +1,7 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, {Component} from "react";
+import axios from "axios";
+import {Link} from "react-router-dom";
+// import jwt from "jsonwebtoken";
 
 class Login extends Component {
   state = {
@@ -8,7 +10,7 @@ class Login extends Component {
   };
 
   handleInputChange = (event) => {
-    const { name, value } = event.target;
+    const {name, value} = event.target;
     this.setState({
       [name]: value,
     });
@@ -16,7 +18,17 @@ class Login extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log("HAL");
+    // console.log(this.state.email);
+    // console.log(this.state.password);
+    // this.props.history.push('/games');
+    axios
+      .post("/api/users", {email: this.state.email, password: this.state.password})
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   render() {
@@ -32,7 +44,7 @@ class Login extends Component {
                   <div className="form-group">
                     <label htmlFor="inputEmail">Email address</label>
                     <input
-                      type="text"
+                      type="email"
                       className="form-control"
                       id="inputEmail"
                       aria-describedby="emailHelp"
@@ -54,21 +66,18 @@ class Login extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <Link to="/games">
-                      <button className="btn btn-primary" type="submit">
-                        Login
-                      </button>
-                    </Link>
+                    {/* <Link to="/games"> */}
+                    <button className="btn btn-warning" type="submit">
+                      Login
+                    </button>
+                    {/* </Link> */}
                   </div>
                 </div>
               </div>
             </form>
             <div className="row">
               <div className="col">
-                <h4>Need to sign up?</h4>
-              <Link to="/signup">
-                <button className="btn btn-primary">Signup</button>
-              </Link>
+                <Link to="signup">Need to create an account?</Link>
               </div>
             </div>
           </div>

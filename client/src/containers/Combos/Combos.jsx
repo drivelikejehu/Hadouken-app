@@ -123,7 +123,7 @@ class Combos extends Component {
                     className="form-control"
                     name="comboName"
                     value={this.state.comboName}
-                    // aria-describedby="ComboNamer"
+                    aria-describedby="ComboNamer"
                     placeholder="Enter your combo's name"
                     onChange={this.handleInputChange}
                   />

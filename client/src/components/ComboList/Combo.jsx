@@ -6,6 +6,12 @@ const Combo = (props) => {
       <td>{props.id}</td>
       <td>{props.comboName}</td>
       <td>{props.comboString}</td>
+      <td><button className="btn btn-info">
+        Edit
+        </button></td>
+        <td><button className="btn btn-danger">
+        Delete
+        </button></td>
     </tr>
   );
 };

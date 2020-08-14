@@ -37,8 +37,15 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
   User.associate = (models) => {
-    User.hasMany(models.Combo);
-    User.hasMany(models.Character)
+    User.belongsToMany(models.Combo, 
+      {
+        through: "ComboUser",
+        foreignKey: "userId"
+      });
+    User.belongsToMany(models.Character,  {
+      through: "userCharacter",
+      foreignKey: "userId"
+  })
   };
   return User;
 };
