@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Navbar from "./components/Shared/Navbar/Navbar";
 import Footer from "./components/Shared/Footer/Footer";
 import Login from "./containers/Login";
@@ -17,45 +17,44 @@ function App(props) {
   return (
     <>
       <Router>
-        <main>
-          <article>
-            <Navbar />
-            <Switch>
-              <Route exact path={["/", "/login"]}>
-                <Login />
-              </Route>
-              <Route exact path={["/signup"]}>
-                <Signup />
-              </Route>
-              <Route exact path={["/games"]}>
-                <Games />
-              </Route>
-              {/* <Route path="/games" render={(props) => (<Games {...props} />)} /> */}
-              <Route exact path={["/characters"]}>
-                <Characters />
-              </Route>
-              <Route exact path={["/streetfighter2"]}>
-                <StreetFighter2 />
-              </Route>
-              <Route path='/StreetFighter2/:character'
-              component={Combos}/>   
-              <Route exact path={["/SuperSmashBrosUltimate"]}>
-                <SuperSmashBrothersUltimate />
-              </Route>
-              <Route path='/ssbu/:character'
-              component={Combos}/>
-              <Route exact path={["/account"]}>
-                <Account />
-              </Route>
-              <Route exact path={["/combos"]}
-              component={Combos}/>
-              <Route exact path={["*"]}>
-                <NotFound />
-              </Route>
-            </Switch>
-            <Footer />
-          </article>
-        </main>
+        {/* <main>
+          <article> */}
+        <Navbar />
+        <Switch>
+          <Route
+            exact
+            path={["/", "/login"]}
+            render={(props) => <Login {...props} />}
+          />
+          <Route exact path={["/signup"]}>
+            <Signup />
+          </Route>
+          <Route exact path={["/games"]}>
+            <Games />
+          </Route>
+          {/* <Route path="/games" render={(props) => (<Games {...props} />)} /> */}
+          <Route exact path={["/characters"]}>
+            <Characters />
+          </Route>
+          <Route exact path={["/streetfighter2"]}>
+            <StreetFighter2 />
+          </Route>
+          <Route path="/StreetFighter2/:character" component={Combos} />
+          <Route exact path={["/SuperSmashBrosUltimate"]}>
+            <SuperSmashBrothersUltimate />
+          </Route>
+          <Route path="/ssbu/:character" component={Combos} />
+          <Route exact path={["/account"]}>
+            <Account />
+          </Route>
+          <Route exact path={["/combos"]} component={Combos} />
+          <Route exact path={["*"]}>
+            <NotFound />
+          </Route>
+        </Switch>
+        <Footer />
+        {/* </article>
+        </main> */}
       </Router>
     </>
   );

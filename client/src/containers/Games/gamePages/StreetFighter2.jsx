@@ -60,9 +60,7 @@ class StreetFighter2 extends Component {
                   </button>
                 </div>
               </div>
-<<<<<<< HEAD
             </form>
-=======
             </div>
             <div className="row">
               {this.state.charsToRender.map((character, index) => (
@@ -77,9 +75,7 @@ class StreetFighter2 extends Component {
                 </div>       
               ))}
             </div>
->>>>>>> fb58b8ed6970e6bdc84106b45cb58b4cc615f33f
           </div>
-        </div>
         <div className="row">
           {this.state.charsToRender.map((character) => (
             <div className="col-sm-3">
