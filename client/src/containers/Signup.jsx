@@ -17,6 +17,11 @@ class Signup extends Component {
       [name]: value,
     });
   };
+  onSuccessNavigate = (event) => {
+    window.location.href=`/account`
+    // once user account structure is created, can build function to automatically 
+    // move user over with their id. 
+  }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
@@ -28,8 +33,11 @@ class Signup extends Component {
         email: this.state.email,
         password: this.state.password,
         username: this.state.username,
+      }).then((response) => {
+        console.log(response)
+          this.onSuccessNavigate();
       })
-      .catch((err, response) => {
+      .catch((err, ) => {
         console.log(err);
         this.setState({
           error: true,
