@@ -7,6 +7,7 @@ class Login extends Component {
   state = {
     email: "",
     password: "",
+    error: "",
   };
 
   handleInputChange = (event) => {
@@ -16,16 +17,22 @@ class Login extends Component {
     });
   };
 
+  onSuccessNavigate = (event) => {
+    window.location.href=`/dashboard/${this.props.match.params.id}`
+  }
+
   handleFormSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("/api/users", {email: this.state.email, password: this.state.password})
+      .post("/api/user", {email: this.state.email, password: this.state.password})
       .then((response) => {
         console.log(response);
+        console.log(response.data.data)
       })
       .catch((error) => {
-          alert("Your Email or password credentials were incorrect, please retry.")
+          // alert("Your Email or password credentials were incorrect, please retry.")
         console.log(error);
+        this.setState({error: true})
       });
   };
 
@@ -34,6 +41,7 @@ class Login extends Component {
       <div className="container">
         <h1>Welcome to Hadouken!</h1>
         <div className="row">
+        
           <div className="col-md-3"></div>
           <div className="col">
             <form onSubmit={this.handleFormSubmit}>
@@ -63,6 +71,7 @@ class Login extends Component {
                       onChange={this.handleInputChange}
                     />
                   </div>
+                  {this.state.error===true && <div className="alert alert-danger" role="alert">Invalid username or password</div>}
                   <div className="form-group">
                     {/* <Link to="/games"> */}
                     <button className="btn btn-warning" type="submit">
