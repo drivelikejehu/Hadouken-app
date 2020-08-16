@@ -3,7 +3,7 @@ import "./App.css";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Navbar from "./components/Shared/Navbar/Navbar";
 import Footer from "./components/Shared/Footer/Footer";
-import Login from "./containers/Login";
+import Login from "./containers/Login/Login";
 import Signup from "./containers/Signup";
 import Games from "./containers/Games/Games";
 import Characters from "./containers/Characters/Characters";
@@ -17,8 +17,6 @@ function App(props) {
   return (
     <>
       <Router>
-        {/* <main>
-          <article> */}
         <Navbar />
         <Switch>
           <Route
@@ -53,8 +51,6 @@ function App(props) {
           </Route>
         </Switch>
         <Footer />
-        {/* </article>
-        </main> */}
       </Router>
     </>
   );
