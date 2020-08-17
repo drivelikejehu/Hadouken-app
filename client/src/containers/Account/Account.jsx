@@ -111,10 +111,11 @@ class Account extends Component {
             </div>
           </div>
           <div className="row">
-            <h3 className="col">
+            <div className="col">
+              <button className="btn btn-warning">
               <Link to="games">Go to the games page</Link>
-              {/* turn this into a button */}
-            </h3>
+              </button>
+            </div>
           </div>
         </div>
       </>
