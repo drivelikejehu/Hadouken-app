@@ -76,7 +76,7 @@ class StreetFighter2 extends Component {
               ))}
             </div>
           </div>
-        <div className="row">
+        {/* <div className="row">
           {this.state.charsToRender.map((character) => (
             <div className="col-sm-3">
               <Card
@@ -88,7 +88,7 @@ class StreetFighter2 extends Component {
               />
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     );
   }

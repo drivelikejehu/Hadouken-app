@@ -40,7 +40,7 @@ class Games extends Component {
                 src={game.pic}
                 name={game.name}
                 desc={game.descr}
-                url={game.name.split(" ").join("")}
+                url={`games/${game.id}`}
                 key={game.id}
               />
             </div>
