@@ -7,12 +7,13 @@ import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import Games from "./containers/Games/Games";
 import Characters from "./containers/Characters/Characters"
-import StreetFighter2 from "./containers/Games/gamePages/StreetFighter2";
+// import StreetFighter2 from "./containers/Games/gamePages/StreetFighter2";
 import Combos from "./containers/Combos/Combos";
 import Account from "./containers/Account/Account";
 import NotFound from "./containers/NotFound/NotFound";
-import SuperSmashBrothersUltimate from "./containers/Games/gamePages/SuperSmashBrothersUltimate";
+// import SuperSmashBrothersUltimate from "./containers/Games/gamePages/SuperSmashBrothersUltimate";
 import gamePage from "./containers/Games/gamePages/gamePage"
+import Dashboard from "./containers/Dashboard/Dashboard"
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
               <Route exact path={["/signup"]}>
                 <Signup />
               </Route>
+              <Route path={["/dashboard/:id"]}
+              component={Dashboard}/>
               <Route exact path={["/games"]}>
                 <Games />
               </Route>
@@ -36,14 +39,8 @@ function App() {
               <Route exact path={["/characters"]}>
                 <Characters />
               </Route>
-              <Route exact path={["/streetfighter2"]}>
-                <StreetFighter2 />
-              </Route>
               <Route path='/characters/:character'
               component={Combos}/>   
-              <Route exact path={["/SuperSmashBrosUltimate"]}>
-                <SuperSmashBrothersUltimate />
-              </Route>
               <Route path='/ssbu/:character'
               component={Combos}/>
               <Route exact path={["/account"]}>
@@ -63,3 +60,12 @@ function App() {
   );
 }
 export default App;
+
+// Extraneous Routes, but keeping for testing/if there are later issues. 
+ {/* <Route exact path={["/streetfighter2"]}>
+                <StreetFighter2 />
+              </Route> */} 
+              
+{/* <Route exact path={["/SuperSmashBrosUltimate"]}>
+                <SuperSmashBrothersUltimate />
+              </Route> */}
