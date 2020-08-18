@@ -44,7 +44,7 @@ router.delete("/:comboId/:userId", (req, res) => {
       userId: req.params.userId,
     },
   })
-    .then(() => {
+    .then(() => {``
       res.json({
         success: true,
       });

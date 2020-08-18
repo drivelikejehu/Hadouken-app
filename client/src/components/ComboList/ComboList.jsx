@@ -11,6 +11,8 @@ const ComboList = (props) => {
           id={comboRenders.id}
           comboName={comboRenders.comboName}
           comboString={comboRenders.comboString}
+          handleDelete={props.handleDelete}
+          handleEdit={props.handleEdit}
         />
       ))}
     </tbody>
