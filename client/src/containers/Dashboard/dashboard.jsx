@@ -1,10 +1,13 @@
 import React, { Component } from "react";
 import ComboList from "../../components/ComboList/ComboList";
 import axios from "axios"
+import Card from "../../components/Shared/Card/Card"
+import "./Dashboard.css"
 class Dashboard extends Component {
   state = {
     result: {},
     search: "",
+    characterName: null,
     combosToRender: [],
     comboName: "",
     comboString: "",
@@ -55,6 +58,9 @@ class Dashboard extends Component {
     })
   }
 
+  handleEdit = (event) => {
+    alert("Edit button is working")
+  }
 
   render() {
     return (
@@ -80,50 +86,13 @@ class Dashboard extends Component {
                 />
               </table>
             </div>
-            <div className="col-2"></div>
-            <div className="col-7">
-              <form>
-                <div className="form-group">
-                  <label htmlFor="ComboNamer">Combo Name</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="comboName"
-                    value={this.state.comboName}
-                    aria-describedby="ComboNamer"
-                    placeholder="Enter your combo's name"
-                    onChange={this.handleInputChange}
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="exampleInputPassword1">Combo Inputs</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={this.state.comboString}
-                    name="comboString"
-                    placeholder="Input your combo's commands here"
-                    onChange={this.handleInputChange}
-                  />
-                </div>
-                <div className="form-check">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    id="ComboChecker"
-                  />
-                  <label className="form-check-label" htmlFor="ComboCheck1">
-                    Are you sure?
-                  </label>
-                </div>
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  onClick={this.handleFormSubmit}
-                >
-                  Submit
-                </button>
-              </form>
+            <div className="col-4"></div>
+            <div className="col-sm-3">
+              <h3>Favorite Character</h3>
+              <Card
+              src={"https://www.ssbwiki.com/images/thumb/5/5c/Joker_SSBU.png/250px-Joker_SSBU.png"}
+              name={"Joker (SSBU)"}
+              url={"/characters/Joker(SSBU)"}/>
             </div>
           </div>
         </div>

@@ -13,20 +13,6 @@ class Combos extends Component {
   };
 
   componentDidMount() {
-    // if(this.props.match.params.character ===! null){   
-    // axios
-    // .get("/api/combo/")
-    // .then((response) => {
-    //   this.setState({
-    //     combosToRender: response.data,
-    //   });
-    // })
-    // .catch((err) => {
-    //   if (err) {
-    //     console.log(err);
-    //   }
-    // });
-    // }
     axios
       .get("/api/combo/")
       .then((response) => {
