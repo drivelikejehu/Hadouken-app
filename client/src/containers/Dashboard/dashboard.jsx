@@ -3,6 +3,7 @@ import ComboList from "../../components/ComboList/ComboList";
 import axios from "axios";
 import Card from "../../components/Shared/Card/Card";
 import "./Dashboard.css";
+import {Link} from "react-router-dom"
 class Dashboard extends Component {
   state = {
     result: {},
@@ -121,6 +122,13 @@ class Dashboard extends Component {
                 name={"Super Smash Bros. Ultimate"}
                 url={"/games/4"}
               />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col" >
+              <button className="btn btn-warning">
+              <Link to="/games">Check out all the games?</Link>
+              </button>
             </div>
           </div>
         </div>
