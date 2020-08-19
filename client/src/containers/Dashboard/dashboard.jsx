@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import ComboList from "../../components/ComboList/ComboList";
-import axios from "axios"
-import Card from "../../components/Shared/Card/Card"
-import "./Dashboard.css"
+import axios from "axios";
+import Card from "../../components/Shared/Card/Card";
+import "./Dashboard.css";
 class Dashboard extends Component {
   state = {
     result: {},
@@ -12,7 +12,6 @@ class Dashboard extends Component {
     comboName: "",
     comboString: "",
   };
-
 
   componentDidMount() {
     axios
@@ -38,29 +37,27 @@ class Dashboard extends Component {
   };
 
   handleDelete = (comboId) => {
-    console.log(comboId)
-    axios
-    .delete(`api/combo/${comboId}`)
-    .then(() => {
+    console.log(comboId);
+    axios.delete(`api/combo/${comboId}`).then(() => {
       console.log("combo deleted");
       axios
-      .get("/api/combo/")
-      .then((response) => {
-        this.setState({
-          combosToRender: response.data,
+        .get("/api/combo/")
+        .then((response) => {
+          this.setState({
+            combosToRender: response.data,
+          });
+        })
+        .catch((err) => {
+          if (err) {
+            console.log(err);
+          }
         });
-      })
-      .catch((err) => {
-        if (err) {
-          console.log(err);
-        }
-      })
-    })
-  }
+    });
+  };
 
   handleEdit = (event) => {
-    alert("Edit button is working")
-  }
+    alert("Edit button is working");
+  };
 
   render() {
     return (
@@ -86,13 +83,44 @@ class Dashboard extends Component {
                 />
               </table>
             </div>
-            <div className="col-4"></div>
+            <div className="col-3"></div>
             <div className="col-sm-3">
               <h3>Favorite Character</h3>
               <Card
-              src={"https://www.ssbwiki.com/images/thumb/5/5c/Joker_SSBU.png/250px-Joker_SSBU.png"}
-              name={"Joker (SSBU)"}
-              url={"/characters/Joker(SSBU)"}/>
+                src={
+                  "https://www.ssbwiki.com/images/thumb/5/5c/Joker_SSBU.png/250px-Joker_SSBU.png"
+                }
+                name={"Joker (SSBU)"}
+                url={"/characters/Joker(SSBU)"}
+              />
+            </div>
+          </div>
+          <div className="row">
+           <div className="col-sm-7"/>
+            <div className="col-sm-1">
+              <h3>User Games</h3>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-sm-4"></div>
+            <div className="col-sm-3">
+              <Card
+                src={
+                  "https://www.fightersgeneration.com/games/sf2-fly.jpg"
+                }
+                name={"Street Fighter 2"}
+                url={"/games/1"}
+              />
+            </div>
+            <div className="col-sm-1"/>
+            <div className="col-sm-3">
+              <Card
+                src={
+                  "https://upload.wikimedia.org/wikipedia/en/thumb/5/50/Super_Smash_Bros._Ultimate.jpg/220px-Super_Smash_Bros._Ultimate.jpg"
+                }
+                name={"Super Smash Bros. Ultimate"}
+                url={"/games/4"}
+              />
             </div>
           </div>
         </div>
