@@ -16,8 +16,9 @@ class Dashboard extends Component {
 
   componentDidMount() {
     axios
-      .get("/api/combo/")
+      .get("/api/combo/recent")
       .then((response) => {
+        console.log(response)
         this.setState({
           combosToRender: response.data,
         });
