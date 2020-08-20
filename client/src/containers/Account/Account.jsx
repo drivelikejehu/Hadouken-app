@@ -113,7 +113,7 @@ class Account extends Component {
           <div className="row">
             <div className="col">
               <button className="btn btn-warning">
-              <Link to="games">Go to the games page</Link>
+              <Link to="dashboard/1">Go to the dashboard</Link>
               </button>
             </div>
           </div>
