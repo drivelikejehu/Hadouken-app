@@ -27,8 +27,8 @@ class Login extends Component {
         password: this.state.password,
       })
       .then((response) => {
-        console.log(response);
-        this.props.history.push("/games")
+        console.log(response.data.data);
+        this.props.history.push(`/dashboard/${response.data.data.id}`)
       })
       .catch((error) => {
         this.setState({error: true});
@@ -41,13 +41,13 @@ class Login extends Component {
       <div className="container">
         <h1>Welcome to Hadouken!</h1>
 
-        {this.state.error && (
+        {/* {this.state.error && (
           <div className="row" id="login-alert">
             <div className="col">
               <p>User Login Failed</p>
             </div>
           </div>
-        )}
+        )} */}
 
         <div className="row">
           <div className="col-md-3"></div>
@@ -79,6 +79,7 @@ class Login extends Component {
                       onChange={this.handleInputChange}
                     />
                   </div>
+                  {this.state.error===true && <div className="alert alert-danger" role="alert">Invalid username or password</div>}
                   <div className="form-group">
                     <button className="btn btn-warning" type="submit">
                       Login

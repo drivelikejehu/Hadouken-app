@@ -34,7 +34,7 @@ router.get("/userRecent", (req, res) => {
     },
     limit: 5,
     order: '"updatedAt" DESC'
-  })
+  }).then((combo) => res.json(combo))
 }) 
 
 router.delete("/:comboId/:userId", (req, res) => {
@@ -44,7 +44,7 @@ router.delete("/:comboId/:userId", (req, res) => {
       userId: req.params.userId,
     },
   })
-    .then(() => {
+    .then(() => {``
       res.json({
         success: true,
       });

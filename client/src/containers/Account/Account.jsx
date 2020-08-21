@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class Account extends Component {
   state = {
@@ -9,8 +10,8 @@ class Account extends Component {
     birthday: "",
   };
   //Lifecycle method that grabs user info from backend
-  componentDidMount(){
-    console.log("why u not work")
+  componentDidMount() {
+    // Can't be written until user info is done, but is not complicated otherwise
   }
 
   handleInputChange = (event) => {
@@ -40,16 +41,18 @@ class Account extends Component {
   handleSubmitBirthday = (event) => {
     event.preventDefault();
     console.log(`birthday is ${this.state.birthday}`);
-    axios.put("api/user/:1",{
-      birthday: this.state.birthday
-    })
-    // can take out this console.log after site is up and running
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    axios
+      .put("api/user/:1", {
+        birthday: this.state.birthday,
+      })
+      // can take out this console.log after site is up and running
+      // Write a display function for the changed data
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   render() {
@@ -106,7 +109,13 @@ class Account extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-sm-2"></div>
+          </div>
+          <div className="row">
+            <div className="col">
+              <button className="btn btn-warning">
+              <Link to="dashboard/1">Go to the dashboard</Link>
+              </button>
+            </div>
           </div>
         </div>
       </>

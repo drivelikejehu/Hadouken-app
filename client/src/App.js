@@ -1,19 +1,21 @@
 import React from "react";
 import "./App.css";
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Shared/Navbar/Navbar";
 import Footer from "./components/Shared/Footer/Footer";
 import Login from "./containers/Login/Login";
 import Signup from "./containers/Signup";
 import Games from "./containers/Games/Games";
-import Characters from "./containers/Characters/Characters";
+import Characters from "./containers/Characters/Characters"
 import StreetFighter2 from "./containers/Games/gamePages/StreetFighter2";
 import Combos from "./containers/Combos/Combos";
 import Account from "./containers/Account/Account";
 import NotFound from "./containers/NotFound/NotFound";
 import SuperSmashBrothersUltimate from "./containers/Games/gamePages/SuperSmashBrothersUltimate";
+// import gamePage from "./containers/Games/gamePages/gamePage"
+// import Dashboard from "./containers/Dashboard/Dashboard"
 
-function App(props) {
+function App() {
   return (
     <>
       <Router>
@@ -55,4 +57,15 @@ function App(props) {
     </>
   );
 }
+
+
+// // Extraneous Routes, but keeping for testing/if there are later issues. 
+// <Route exact path={["/streetfighter2"]}>
+//                 <StreetFighter2 />
+//               </Route>
+              
+// <Route exact path={["/SuperSmashBrosUltimate"]}>
+//                 <SuperSmashBrothersUltimate />
+//               </Route>
+
 export default App;

@@ -1,11 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
+const { route } = require("./characterCombo");
 
 router.get("/", (req, res) => {
     db.Character.findAll({
     }).then((character) => res.json(character));
   });
+
 
   router.get("/:id", (req, res) => {
     db.Character.findOne({

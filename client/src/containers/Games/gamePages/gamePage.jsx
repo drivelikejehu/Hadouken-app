@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Card from "../../../components/Shared/Card/Card";
 import axios from "axios";
-class StreetFighter2 extends Component {
+class gamePage extends Component {
   state = {
     result: {},
     search: "",
@@ -21,7 +21,7 @@ class StreetFighter2 extends Component {
 
   componentDidMount() {
     axios
-      .get("/api/character/gameselect/1")
+      .get(`/api/character/gameselect/${this.props.match.params.id}`)
       .then((response) => {
         this.setState({
           charsToRender: response.data,
@@ -70,7 +70,7 @@ class StreetFighter2 extends Component {
                     src={character.charURL}
                     name={character.characterName}
                     // desc={character.charType}
-                    url={"/StreetFighter2/" + character.characterName.split(" ").join("")}
+                    url={"/characters/" + character.characterName.split(" ").join("")}
                   />
                 </div>       
               ))}
@@ -81,4 +81,4 @@ class StreetFighter2 extends Component {
   }
 }
 
-export default StreetFighter2;
+export default gamePage;
