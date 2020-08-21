@@ -9,7 +9,6 @@ router.get("/", (req, res) => {
   });
 
 
-
   router.get("/:id", (req, res) => {
     db.Character.findOne({
       where: {id: req.params.id}
