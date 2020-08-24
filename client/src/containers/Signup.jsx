@@ -46,17 +46,6 @@ class Signup extends Component {
       });
   };
 
-  // handleFormSubmit = (event) => {
-  //   this.setState({
-  //     firstName: ,
-  //     lastName: "",
-  //     username: "",
-  //     email: "",
-  //     password: "",
-  //     confirmPass: "",
-  //   });
-  // };
-
   render() {
     return (
       <div className="container">

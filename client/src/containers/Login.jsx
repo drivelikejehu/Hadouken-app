@@ -30,7 +30,7 @@ class Login extends Component {
         console.log(response.data.data)
       })
       .catch((error) => {
-          // alert("Your Email or password credentials were incorrect, please retry.")
+        
         console.log(error);
         this.setState({error: true})
       });
