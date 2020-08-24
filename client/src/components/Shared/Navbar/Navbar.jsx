@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark navbar-header">
       <div className="container">
-        <a className="navbar-brand" href="/dashboard/1">
+        <a className="navbar-brand" href="/">
           Hadouken
         </a>
         <button
