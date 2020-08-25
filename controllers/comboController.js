@@ -27,7 +27,7 @@ router.get("/recent", (req, res) => {
   }).then((combo) => res.json(combo))
 }) 
 
-router.get(":id", (req, res) => {
+router.get("/:id", (req, res) => {
   db.Combo.findOne({
     where: {
       id: req.params.id,

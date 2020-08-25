@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
+const sequelize = require("sequelize")
 const { Op } = require("sequelize");
 
 router.post("/", (req, res) => {
