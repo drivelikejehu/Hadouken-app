@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
-const sequelize = require("sequelize")
 const { route } = require("./userController");
 
+// What's the best way to get this to take the character/user ID's for the comboList?
 router.post("/", (req, res) => {
   const comboName = req.body.comboName.trim();
   const comboString = req.body.comboString.trim();
@@ -20,12 +20,6 @@ router.post("/", (req, res) => {
       console.log(err);
     });
 });
-// Temporary recent route until User Auth is done
-router.get("/recent", (req, res) => {
-  db.Combo.findAll({
-    order: sequelize.literal('id DESC'),
-  }).then((combo) => res.json(combo))
-}) 
 
 router.get("/:id", (req, res) => {
   db.Combo.findOne({
