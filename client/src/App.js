@@ -26,13 +26,8 @@ function App() {
             path={["/", "/login"]}
             render={(props) => <Login {...props} />}
           />
-          <Route exact path={["/signup"]}>
-            <Signup />
-          </Route>
-          <Route exact path={["/games"]}>
-            <Games />
-          </Route>
-          {/* <Route path="/games" render={(props) => <Games {...props} />} /> */}
+          <Route path="/signup" render={(props) => <Signup {...props} />} />
+          <Route path="/games" render={(props) => <Games {...props} />} />
           <Route exact path={["/characters"]}>
             <Characters />
           </Route>
@@ -48,7 +43,7 @@ function App() {
             <Account />
           </Route>
           <Route exact path={["/combos"]} component={Combos} />
-          <Route exact path={["*"]}>
+          <Route path="*">
             <NotFound />
           </Route>
         </Switch>
