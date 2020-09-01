@@ -31,7 +31,6 @@
     "sequelize": "^6.3.3"
   },
   "devDependencies": {
-    "concurrently": "^5.2.0",
-    "react-router-dom": "^5.2.0"
+    "concurrently": "^5.2.0"
   }
 }

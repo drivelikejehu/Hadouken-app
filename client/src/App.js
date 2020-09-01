@@ -29,10 +29,10 @@ function App() {
           <Route exact path={["/signup"]}>
             <Signup />
           </Route>
-          {/* <Route exact path={["/games"]}>
+          <Route exact path={["/games"]}>
             <Games />
-          </Route> */}
-          <Route path="/games" render={(props) => <Games {...props} />} />
+          </Route>
+          {/* <Route path="/games" render={(props) => <Games {...props} />} /> */}
           <Route exact path={["/characters"]}>
             <Characters />
           </Route>
