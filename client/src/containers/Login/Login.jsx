@@ -27,12 +27,12 @@ class Login extends Component {
         password: this.state.password,
       })
       .then((response) => {
-        console.log(response.data.data);
+        console.log(response);
         this.props.history.push(`/dashboard/${response.data.data.id}`);
       })
-      .catch((error) => {
-        this.setState({ error: true });
-        console.log(error);
+      .catch((err) => {
+        console.log(err);
+        this.setState({ error: err.response.data.message });
       });
   };
 
@@ -70,9 +70,9 @@ class Login extends Component {
                       onChange={this.handleInputChange}
                     />
                   </div>
-                  {this.state.error === true && (
+                  {this.state.error && (
                     <div className="alert alert-danger" role="alert">
-                      Invalid username or password
+                      <p>{this.state.error}</p>
                     </div>
                   )}
                   <div className="form-group">
