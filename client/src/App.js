@@ -13,7 +13,7 @@ import Account from "./containers/Account/Account";
 import NotFound from "./containers/NotFound/NotFound";
 import SuperSmashBrothersUltimate from "./containers/Games/gamePages/SuperSmashBrothersUltimate";
 // import gamePage from "./containers/Games/gamePages/gamePage"
-// import Dashboard from "./containers/Dashboard/Dashboard"
+import Dashboard from "./containers/Dashboard/Dashboard"
 
 function App() {
   return (
@@ -28,7 +28,8 @@ function App() {
           />
           <Route path="/signup" render={(props) => <Signup {...props} />} />
           <Route path="/games" render={(props) => <Games {...props} />} />
-          <Route exact path={["/characters"]}>
+          <Route path="/dashboard/:id" render={(props) => <Dashboard {...props} /> } />
+          {/* <Route exact path={["/characters"]}>
             <Characters />
           </Route>
           <Route exact path={["/streetfighter2"]}>
@@ -42,7 +43,7 @@ function App() {
           <Route exact path={["/account"]}>
             <Account />
           </Route>
-          <Route exact path={["/combos"]} component={Combos} />
+          <Route exact path={["/combos"]} component={Combos} /> */}
           <Route path="*">
             <NotFound />
           </Route>
