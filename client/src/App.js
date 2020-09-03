@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Shared/Navbar/Navbar";
 import Footer from "./components/Shared/Footer/Footer";
 import Login from "./containers/Login/Login";
-import Signup from "./containers/Signup";
+import Signup from "./containers/Signup/Signup";
 import Games from "./containers/Games/Games";
 import Characters from "./containers/Characters/Characters";
 import StreetFighter2 from "./containers/Games/gamePages/StreetFighter2";
