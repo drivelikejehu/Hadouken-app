@@ -6,12 +6,12 @@ import Footer from "./components/Shared/Footer/Footer";
 import Login from "./containers/Login/Login";
 import Signup from "./containers/Signup";
 import Games from "./containers/Games/Games";
-// import Characters from "./containers/Characters/Characters";
-// import StreetFighter2 from "./containers/Games/gamePages/StreetFighter2";
-// import Combos from "./containers/Combos/Combos";
-// import Account from "./containers/Account/Account";
+import Characters from "./containers/Characters/Characters";
+import StreetFighter2 from "./containers/Games/gamePages/StreetFighter2";
+import Combos from "./containers/Combos/Combos";
+import Account from "./containers/Account/Account";
 import NotFound from "./containers/NotFound/NotFound";
-// import SuperSmashBrothersUltimate from "./containers/Games/gamePages/SuperSmashBrothersUltimate";
+import SuperSmashBrothersUltimate from "./containers/Games/gamePages/SuperSmashBrothersUltimate";
 // import gamePage from "./containers/Games/gamePages/gamePage"
 import Dashboard from "./containers/Dashboard/Dashboard";
 
@@ -32,7 +32,7 @@ function App() {
             path="/dashboard/:id"
             render={(props) => <Dashboard {...props} />}
           />
-          {/* <Route exact path={["/characters"]}>
+          <Route exact path={["/characters"]}>
             <Characters />
           </Route>
           <Route exact path={["/streetfighter2"]}>
@@ -46,7 +46,7 @@ function App() {
           <Route exact path={["/account"]}>
             <Account />
           </Route>
-          <Route exact path={["/combos"]} component={Combos} /> */}
+          <Route exact path={["/combos"]} component={Combos} />
           <Route path="*">
             <NotFound />
           </Route>

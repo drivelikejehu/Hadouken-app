@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import "./Login.css";
+import { Link } from "react-router-dom";
+import Input from "../../components/Shared/Input/Input";
 // import jwt from "jsonwebtoken";
 
 class Login extends Component {
@@ -43,33 +44,29 @@ class Login extends Component {
         <div className="row">
           <div className="col-md-3"></div>
           <div className="col">
-            <form onSubmit={this.handleFormSubmit}>
-              <div className="card">
-                <div className="card-body">
-                  <div className="form-group">
-                    <label htmlFor="inputEmail">Email address</label>
-                    <input
-                      type="email"
-                      className="form-control"
-                      id="inputEmail"
-                      aria-describedby="emailHelp"
-                      name="email"
-                      value={this.state.email}
-                      onChange={this.handleInputChange}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="inputPassword">Password</label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      id="inputPassword"
-                      aria-describedby="emailHelp"
-                      name="password"
-                      value={this.state.password}
-                      onChange={this.handleInputChange}
-                    />
-                  </div>
+            <div className="card">
+              <div className="card-body">
+                <form onSubmit={this.handleFormSubmit}>
+                  <Input
+                    label="E-mail address"
+                    type="email"
+                    className="form-control"
+                    id="inputEmail"
+                    aria-describedby="emailHelp"
+                    name="email"
+                    value={this.state.email}
+                    onChange={this.handleInputChange}
+                  />
+                  <Input
+                    label="Password"
+                    type="password"
+                    className="form-control"
+                    id="inputPassword"
+                    aria-describedby="passwordHelp"
+                    name="password"
+                    value={this.state.password}
+                    onChange={this.handleInputChange}
+                  />
                   {this.state.error && (
                     <div className="alert alert-danger" role="alert">
                       <p>{this.state.error}</p>
@@ -80,9 +77,9 @@ class Login extends Component {
                       Login
                     </button>
                   </div>
-                </div>
+                </form>
               </div>
-            </form>
+            </div>
             <div className="row">
               <div className="col">
                 <Link to="signup">Need to create an account?</Link>
