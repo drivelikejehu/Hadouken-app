@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./Signup.css";
-import Input from "../../components/Shared/Input/Input";
+import Input from "../components/Shared/Input/Input";
 
 class Signup extends Component {
   state = {
@@ -58,7 +57,7 @@ class Signup extends Component {
                     type="text"
                     name="firstName"
                     value={this.state.firstName}
-                    label="First Name"
+                    placeholder="First Name"
                     onChange={this.handleInputChange}
                   />
                   <Input
@@ -66,7 +65,7 @@ class Signup extends Component {
                     type="text"
                     name="lastName"
                     value={this.state.lastName}
-                    label="Last Name"
+                    placeholder="Last Name"
                     onChange={this.handleInputChange}
                   />
                   <Input
@@ -74,7 +73,7 @@ class Signup extends Component {
                     type="text"
                     name="username"
                     value={this.state.username}
-                    label="Username"
+                    placeholder="Username"
                     onChange={this.handleInputChange}
                   />
                   <Input
@@ -82,7 +81,7 @@ class Signup extends Component {
                     type="text"
                     name="email"
                     value={this.state.email}
-                    label="E-mail"
+                    placeholder="E-mail"
                     onChange={this.handleInputChange}
                   />
                   <Input
@@ -90,7 +89,7 @@ class Signup extends Component {
                     type="password"
                     name="password"
                     value={this.state.password}
-                    label="Password"
+                    placeholder="Password"
                     onChange={this.handleInputChange}
                   />
                   <Input
@@ -98,7 +97,7 @@ class Signup extends Component {
                     type="password"
                     name="confirmPass"
                     value={this.state.confirmPass}
-                    label="Confirm Password"
+                    placeholder="Confirm Password"
                     onChange={this.handleInputChange}
                   />
                   <button

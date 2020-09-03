@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./Login.css";
 import { Link } from "react-router-dom";
-import Input from "../../components/Shared/Input/Input";
+import Input from "../components/Shared/Input/Input";
 // import jwt from "jsonwebtoken";
 
 class Login extends Component {
@@ -82,7 +81,7 @@ class Login extends Component {
             </div>
             <div className="row">
               <div className="col">
-                <Link to="signup">Need to create an account?</Link>
+                <Link to="/signup">Need to create an account?</Link>
               </div>
             </div>
           </div>

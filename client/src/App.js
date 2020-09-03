@@ -3,9 +3,9 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar from "./components/Shared/Navbar/Navbar";
 import Footer from "./components/Shared/Footer/Footer";
-import Login from "./containers/Login/Login";
-import Signup from "./containers/Signup/Signup";
-import Games from "./containers/Games/Games";
+import Login from "./containers/Login";
+import Signup from "./containers/Signup";
+// import Games from "./containers/Games/Games";
 import Characters from "./containers/Characters/Characters";
 import StreetFighter2 from "./containers/Games/gamePages/StreetFighter2";
 import Combos from "./containers/Combos/Combos";
@@ -27,14 +27,14 @@ function App() {
             render={(props) => <Login {...props} />}
           />
           <Route path="/signup" render={(props) => <Signup {...props} />} />
-          <Route path="/games" render={(props) => <Games {...props} />} />
+          <Route path="/games" render={(props) => <Characters {...props} />} />
           <Route
             path="/dashboard/:id"
             render={(props) => <Dashboard {...props} />}
           />
-          <Route exact path={["/characters"]}>
+          {/* <Route exact path={["/characters"]}>
             <Characters />
-          </Route>
+          </Route> */}
           <Route exact path={["/streetfighter2"]}>
             <StreetFighter2 />
           </Route>
