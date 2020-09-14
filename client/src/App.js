@@ -5,7 +5,7 @@ import Navbar from "./components/Shared/Navbar/Navbar";
 import Footer from "./components/Shared/Footer/Footer";
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
-// import Games from "./containers/Games/Games";
+import Games from "./containers/Games/Games";
 import Characters from "./containers/Characters/Characters";
 import StreetFighter2 from "./containers/Games/gamePages/StreetFighter2";
 import Combos from "./containers/Combos/Combos";
@@ -27,7 +27,9 @@ function App() {
             render={(props) => <Login {...props} />}
           />
           <Route path="/signup" render={(props) => <Signup {...props} />} />
-          <Route path="/games" render={(props) => <Characters {...props} />} />
+          <Route path="/games" render={(props) => <Games {...props} />} />
+          <Route path="/characters" render={(props) => <Characters {...props} />} />
+
           <Route
             path="/dashboard/:id"
             render={(props) => <Dashboard {...props} />}
