@@ -1,8 +1,7 @@
 .row .col {
-  text-align: left;
+  text-align: center;
   margin: auto;
   float: none;
-  line-height: .75;
 }
 
 .container {
