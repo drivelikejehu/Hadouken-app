@@ -13,7 +13,7 @@ import Account from "./containers/Account/Account";
 import NotFound from "./containers/NotFound/NotFound";
 // import SuperSmashBrothersUltimate from "./containers/Games/gamePages/SuperSmashBrothersUltimate";
 import gamePage from "./containers/Games/gamePages/gamePage"
-import Dashboard from "./containers/Dashboard/Dashboard"
+import Dashboard from "./containers/Dashboard/dashboard"
 
 function App() {
   return (
