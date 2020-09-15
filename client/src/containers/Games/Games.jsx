@@ -35,13 +35,13 @@ class Games extends Component {
       <div className="container">
         <div className="row">
           {this.state.gamesToRender.map((game) => (
-            <div className="col-sm-3">
+            <div className="col-sm-3" key={game.id}>
               <Card 
                 src={game.pic}
                 name={game.name}
                 desc={game.descr}
                 url={`games/${game.id}`}
-                key={game.id}
+                
               />
             </div>
           ))}

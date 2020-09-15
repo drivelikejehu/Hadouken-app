@@ -20,58 +20,6 @@ app.get("/api/config", (req, res) => {
   });
 });
 
-const users = [
-  {
-    id: "1",
-    email: "john@gmail.com",
-    password: "password",
-  },
-  {
-    id: "2",
-    email: "bob@gmail.com",
-    password: "password",
-  },
-  {
-    id: "3",
-    email: "bacon@gmail.com",
-    password: "password",
-  },
-];
-
-app.post("/api/users", (req, res) => {
-  const {email, password} = req.body;
-  // db.User.findOne({email: email})
-  const foundUserArray = users.filter((user) => user.email === email);
-  console.log(foundUserArray);
-  if (foundUserArray.length > 0) {
-    const userToAuthenticate = foundUserArray[0];
-    // res.json(foundUserArray[0]);
-    if (userToAuthenticate.password === password) {
-      res.json({
-        success: true,
-        message: "We found a user",
-        //TODO: Convert data here to a JWT for future authentication
-        data: userToAuthenticate,
-      });
-    } else {
-      res.status(403);
-      res.json({
-        success: false,
-        message: "Invalid username or password",
-        data: null,
-      });
-    }
-    // res.json(userToAuthenticate);
-  } else {
-    res.status(400);
-    res.json({
-      success: false,
-      message: "Invalid username or password",
-      data: null,
-    });
-  }
-});
-
 app.use("/api/user", userController);
 app.use("/api/game", gameController);
 app.use("/api/character", characterController);
