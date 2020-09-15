@@ -1,38 +1,38 @@
 import React, {Component} from "react";
 import axios from "axios";
 import {Link} from "react-router-dom";
-import "./Login.css";
 // import jwt from "jsonwebtoken";
 
 class Login extends Component {
   state = {
     email: "",
     password: "",
-    error: false,
+    error: "",
   };
 
   handleInputChange = (event) => {
     const {name, value} = event.target;
     this.setState({
       [name]: value,
-      error: false,
     });
   };
+
+  onSuccessNavigate = (event) => {
+    window.location.href=`/dashboard/${this.props.match.params.id}`
+  }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("/api/users", {
-        email: this.state.email,
-        password: this.state.password,
-      })
+      .post("/api/user", {email: this.state.email, password: this.state.password})
       .then((response) => {
-        console.log(response.data.data);
-        this.props.history.push(`/dashboard/${response.data.data.id}`)
+        console.log(response);
+        console.log(response.data.data)
       })
       .catch((error) => {
-        this.setState({error: true});
+          // alert("Your Email or password credentials were incorrect, please retry.")
         console.log(error);
+        this.setState({error: true})
       });
   };
 
@@ -40,16 +40,8 @@ class Login extends Component {
     return (
       <div className="container">
         <h1>Welcome to Hadouken!</h1>
-
-        {/* {this.state.error && (
-          <div className="row" id="login-alert">
-            <div className="col">
-              <p>User Login Failed</p>
-            </div>
-          </div>
-        )} */}
-
         <div className="row">
+        
           <div className="col-md-3"></div>
           <div className="col">
             <form onSubmit={this.handleFormSubmit}>
@@ -81,9 +73,11 @@ class Login extends Component {
                   </div>
                   {this.state.error===true && <div className="alert alert-danger" role="alert">Invalid username or password</div>}
                   <div className="form-group">
+                    {/* <Link to="/games"> */}
                     <button className="btn btn-warning" type="submit">
                       Login
                     </button>
+                    {/* </Link> */}
                   </div>
                 </div>
               </div>
