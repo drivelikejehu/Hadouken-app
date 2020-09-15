@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 const { route } = require("./characterCombo");
-const sequelize = require("sequelize")
 
 router.get("/", (req, res) => {
     db.Character.findAll({
