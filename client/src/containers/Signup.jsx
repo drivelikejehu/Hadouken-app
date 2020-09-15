@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Input from "../components/Shared/Input/Input";
 
 class Signup extends Component {
   state = {
@@ -17,11 +18,6 @@ class Signup extends Component {
       [name]: value,
     });
   };
-  onSuccessNavigate = (event) => {
-    window.location.href=`/account`
-    // once user account structure is created, can build function to automatically 
-    // move user over with their id. 
-  }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
@@ -33,11 +29,12 @@ class Signup extends Component {
         email: this.state.email,
         password: this.state.password,
         username: this.state.username,
-      }).then((response) => {
-        console.log(response)
-          this.onSuccessNavigate();
       })
-      .catch((err, ) => {
+      .then((response) => {
+        console.log(response);
+        this.onSuccessNavigate();
+      })
+      .catch((err) => {
         console.log(err);
         this.setState({
           error: true,
@@ -51,70 +48,58 @@ class Signup extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-3"></div>
-          <div className="col-md-6">
+          <div className="col">
             <div className="card">
               <div className="card-body">
-                <form>
-                  <div className="form-group">
-                    <input
-                      className="form-control"
-                      type="text"
-                      name="firstName"
-                      value={this.state.firstName}
-                      placeholder="First Name"
-                      onChange={this.handleInputChange}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      className="form-control"
-                      type="text"
-                      name="lastName"
-                      value={this.state.lastName}
-                      placeholder="Last Name"
-                      onChange={this.handleInputChange}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      className="form-control"
-                      type="text"
-                      name="username"
-                      value={this.state.username}
-                      placeholder="Username"
-                      onChange={this.handleInputChange}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      className="form-control"
-                      type="text"
-                      name="email"
-                      value={this.state.email}
-                      placeholder="E-mail"
-                      onChange={this.handleInputChange}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      className="form-control"
-                      type="password"
-                      name="password"
-                      value={this.state.password}
-                      placeholder="Password"
-                      onChange={this.handleInputChange}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <input
-                      className="form-control"
-                      type="password"
-                      name="confirmPass"
-                      value={this.state.confirmPass}
-                      placeholder="Confirm Password"
-                      onChange={this.handleInputChange}
-                    />
-                  </div>
+                <form onSubmit={this.handleFormSubmit}>
+                  <Input
+                    className="form-control"
+                    type="text"
+                    name="firstName"
+                    value={this.state.firstName}
+                    placeholder="First Name"
+                    onChange={this.handleInputChange}
+                  />
+                  <Input
+                    className="form-control"
+                    type="text"
+                    name="lastName"
+                    value={this.state.lastName}
+                    placeholder="Last Name"
+                    onChange={this.handleInputChange}
+                  />
+                  <Input
+                    className="form-control"
+                    type="text"
+                    name="username"
+                    value={this.state.username}
+                    placeholder="Username"
+                    onChange={this.handleInputChange}
+                  />
+                  <Input
+                    className="form-control"
+                    type="text"
+                    name="email"
+                    value={this.state.email}
+                    placeholder="E-mail"
+                    onChange={this.handleInputChange}
+                  />
+                  <Input
+                    className="form-control"
+                    type="password"
+                    name="password"
+                    value={this.state.password}
+                    placeholder="Password"
+                    onChange={this.handleInputChange}
+                  />
+                  <Input
+                    className="form-control"
+                    type="password"
+                    name="confirmPass"
+                    value={this.state.confirmPass}
+                    placeholder="Confirm Password"
+                    onChange={this.handleInputChange}
+                  />
                   <button
                     type="submit"
                     className="btn btn-primary"
