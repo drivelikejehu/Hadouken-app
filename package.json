@@ -29,5 +29,9 @@
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.3"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "react-router-dom": "^5.2.0"
   }
 }

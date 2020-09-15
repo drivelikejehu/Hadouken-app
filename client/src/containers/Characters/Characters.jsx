@@ -3,7 +3,6 @@ import React, { Component } from "react";
 class Characters extends Component {
   state = {
     searchTerm: "",
-    charsToRender: [],
   };
 
   handleFormSubmit = (event) => {
