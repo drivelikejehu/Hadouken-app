@@ -11,9 +11,9 @@ import StreetFighter2 from "./containers/Games/gamePages/StreetFighter2";
 import Combos from "./containers/Combos/Combos";
 import Account from "./containers/Account/Account";
 import NotFound from "./containers/NotFound/NotFound";
-import SuperSmashBrothersUltimate from "./containers/Games/gamePages/SuperSmashBrothersUltimate";
-// import gamePage from "./containers/Games/gamePages/gamePage"
-// import Dashboard from "./containers/Dashboard/Dashboard"
+// import SuperSmashBrothersUltimate from "./containers/Games/gamePages/SuperSmashBrothersUltimate";
+import gamePage from "./containers/Games/gamePages/gamePage"
+import Dashboard from "./containers/Dashboard/dashboard"
 
 function App() {
   return (
